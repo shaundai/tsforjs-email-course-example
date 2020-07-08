@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          You've been authenticated.  Here's the app
+          This is where the app dashboard will be.
       </header>
     </div>
   );
