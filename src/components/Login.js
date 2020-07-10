@@ -11,9 +11,9 @@ const Login = () => {
     <Main>
       <header>
           <div>
-          <span style={{fontSize: '1.3em', margin: '.8em auto'}}>Welcome to</span>
+          <div style={{fontSize: '1.3em', margin: '.5em auto'}}>Welcome to</div>
           <Header>Account-Based Selling</Header>
-          <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '.3em', fontSize: '1.3em'}}>
+          <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '.8em auto', fontSize: '1.3em'}}>
               <em>by </em> <img alt="salesloft logo" src={salesloftlogo} style={{height: '1.6em', color: 'white', margin: '0 .4em'}} /></div>
           </div>
           <div style={{margin: '2.5em auto'}}>

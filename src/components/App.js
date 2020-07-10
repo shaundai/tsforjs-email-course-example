@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          This is where the app dashboard will be.
+          Welcome, User! This is where the app dashboard will be.
       </header>
     </div>
   );
