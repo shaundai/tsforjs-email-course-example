@@ -22,11 +22,15 @@ function App() {
         <TierBlock>
           <TierTitle>Tier 1</TierTitle>
           <ListAccount>
-            <div>
-            <b>Account</b>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+              <div><b>Account</b></div>
+              <div style={{fontSize: '.7em'}}># Employees</div>
             </div>
-            
-            , Account Owner, # Employees:, Last Contacted: 
+
+            <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '1em'}}>
+              <div style={{fontSize: '.7em'}}>Account Owner </div>
+              <div style={{fontSize: '.7em'}}>Last Contacted: </div>
+            </div>
             <div style={{display: 'flex', justifyContent: 'center'}}>
               <img alt="Salesforce" src={salesforce} style={{margin: '0 .4em', height: '1.2em'}} />
               <img alt="LinkedIn" src={linkedin} style={{margin: '0 .4em', height: '1.2em'}} />
