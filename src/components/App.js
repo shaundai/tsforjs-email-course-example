@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import './App.css';
 import salesloftlogo from '../images/salesloftlogo.png'
+import linkedin from '../images/linkedin.png'
+import salesforce from '../images/salesforce.png'
+import website from '../images/websiteicon.png'
 
 function App() {
   return (
@@ -20,11 +23,15 @@ function App() {
           <TierTitle>Tier 1</TierTitle>
           <ListAccount>
             <div>
-            Account
+            <b>Account</b>
             </div>
             
             , Account Owner, # Employees:, Last Contacted: 
-            <div>Salesforce LinkedIn Website</div>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+              <img alt="Salesforce" src={salesforce} style={{margin: '0 .4em', height: '1.2em'}} />
+              <img alt="LinkedIn" src={linkedin} style={{margin: '0 .4em', height: '1.2em'}} />
+              <img alt="Company Website"  src={website} style={{margin: '0 .4em', height: '1.2em'}}/>
+              </div>
           </ListAccount>
         </TierBlock>
         <TierBlock>
