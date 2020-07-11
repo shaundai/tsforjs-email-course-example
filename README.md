@@ -1,4 +1,4 @@
-## SalesLoft A
+## Account-Based Selling with SalesLoft
 
 #### SalesLoft Web App
 
