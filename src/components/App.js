@@ -8,15 +8,15 @@ import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
 function App() {
-  const getMyName = async () => {
-    try {
-      const myName = await getSalesLoftApi('7278d0df3e6175f5900d67986ab4a639f38d80339d6692bc6d29ecb4a5e8d3ef', 'shaundai-salesloft.surge.sh').data.name
-      return myName
-    }
-    catch(err){
-      console.log('sum happened')
-    }
-  }
+  // const getMyName = async () => {
+  //   try {
+  //     const myName = await getSalesLoftApi('7278d0df3e6175f5900d67986ab4a639f38d80339d6692bc6d29ecb4a5e8d3ef', 'shaundai-salesloft.surge.sh').data.name
+  //     return myName
+  //   }
+  //   catch(err){
+  //     console.log('sum happened')
+  //   }
+  // }
 
   return (
     <div style={{fontFamily: 'Montserrat', color: '#4F5359'}}>
@@ -25,7 +25,7 @@ function App() {
         </Header>
         <div style={{paddingTop: '.3em'}}>
         <Welcome>
-        Welcome, <b>{getMyName()}</b>!
+        Welcome, <b>User</b>!
         </Welcome>
         <Welcome>How will you hit your quota this quarter?</Welcome>
         </div>
