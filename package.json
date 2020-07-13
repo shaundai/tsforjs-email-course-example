@@ -22,7 +22,6 @@
     "eject": "react-scripts eject",
     "deploy": "npm run build && mv build/index.html build/200.html && surge build shaundai-salesloft.surge.sh"
   },
-  "proxy": "https://shaundai-salesloft-node.herokuapp.com/",
   "eslintConfig": {
     "extends": "react-app"
   },
