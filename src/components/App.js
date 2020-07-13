@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import './App.css';
-import getSalesLoftApi from './util/salesloftApi'
 import salesloftlogo from '../images/salesloftlogo.png'
 import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
