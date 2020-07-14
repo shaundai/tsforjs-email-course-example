@@ -5,6 +5,7 @@ import salesloftlogo from '../images/salesloftlogo.png'
 import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
+import testApi from './util/testApi'
 
 function App() {
   // const getMyName = async () => {
@@ -26,6 +27,7 @@ function App() {
         <Welcome>
         Welcome, <b>User</b>!
         </Welcome>
+        {testApi}
         <Welcome>How will you hit your quota this quarter?</Welcome>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
