@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import './App.css';
+import getSalesLoftApi from './util/testApi'
 import salesloftlogo from '../images/salesloftlogo.png'
 import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
@@ -8,15 +9,17 @@ import website from '../images/websiteicon.png'
 import testApi from './util/testApi'
 
 function App() {
-  // const getMyName = async () => {
-  //   try {
-  //     const myName = await getSalesLoftApi('7278d0df3e6175f5900d67986ab4a639f38d80339d6692bc6d29ecb4a5e8d3ef', 'shaundai-salesloft.surge.sh').data.name
-  //     return myName
-  //   }
-  //   catch(err){
-  //     console.log('sum happened')
-  //   }
-  // }
+
+  const [myName, setMyName] = useState('');
+  const getMyName = async () => {
+    try {
+      const name = await getSalesLoftApi().data.name
+      setMyName(name);
+      }
+      catch(err){
+        console.log('sum happened')
+      }
+}
 
   return (
     <div style={{fontFamily: 'Montserrat', color: '#4F5359'}}>
@@ -27,7 +30,7 @@ function App() {
         <Welcome>
         Welcome, <b>User</b>!
         </Welcome>
-        {testApi}
+        <button onClick={getMyName}>{myName}</button>
         <Welcome>How will you hit your quota this quarter?</Welcome>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>

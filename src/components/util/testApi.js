@@ -1,19 +1,8 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState } from 'react';
+const axios = require('axios');
 
 const testApi = () => {
-    const [geo, setGeo] = useState({apiResponse : ''})
-        fetch("https://shaundai-salesloft-node.herokuapp.com/salesloft")
-            .then(res => res.text())
-            .then(res => {
-                setGeo({ apiResponse: res })
-            })
-            .catch(err => err);
-        return (
-            <div>
-                hi {geo.apiResponse}
-            </div>
-        )
+    return axios.get(`https://shaundai-salesloft-node.herokuapp.com/salesloft`)
 }
 
-export default testApi;
+
+export default testApi
