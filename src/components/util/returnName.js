@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const returnName = () => {
-    return axios.get(`https://shaundai-salesloft-node.herokuapp.com/salesloft`)
+    return axios.get(`https://cors-anywhere.herokuapp.com/https://shaundai-salesloft-node.herokuapp.com/salesloft`)
 }
 
 

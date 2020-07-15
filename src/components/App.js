@@ -13,8 +13,9 @@ function App() {
 
   useEffect(() => {
     const getMyName = async () => {
-      const name = (await getSalesLoftApi());
-      setMyName(name.data);
+      const name = (await getSalesLoftApi()).id;
+      setMyName(name);
+      console.log(name)
       }
       getMyName();
 }, []);
@@ -26,9 +27,9 @@ function App() {
         </Header>
         <div style={{paddingTop: '.3em'}}>
         <Welcome>
-        Welcome, <b>User</b>!
+        Welcome, <b>User {myName}</b>!
         </Welcome>
-        {myName}
+        
         <Welcome>How will you hit your quota this quarter?</Welcome>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
