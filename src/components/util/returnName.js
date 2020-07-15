@@ -1,8 +1,8 @@
 const axios = require('axios');
 
-const testApi = () => {
+const returnName = () => {
     return axios.get(`https://shaundai-salesloft-node.herokuapp.com/salesloft`)
 }
 
 
-export default testApi
+export default returnName

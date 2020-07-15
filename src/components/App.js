@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import './App.css';
-import getSalesLoftApi from './util/testApi'
+import getSalesLoftApi from './util/returnName'
 import salesloftlogo from '../images/salesloftlogo.png'
 import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
@@ -10,15 +10,14 @@ import website from '../images/websiteicon.png'
 function App() {
 
   const [myName, setMyName] = useState('');
-  const getMyName = async () => {
-    try {
-      const name = await getSalesLoftApi().data.name
-      setMyName(name);
+
+  useEffect(() => {
+    const getMyName = async () => {
+      const name = (await getSalesLoftApi());
+      setMyName(name.data);
       }
-      catch(err){
-        console.log('sum happened')
-      }
-}
+      getMyName();
+}, []);
 
   return (
     <div style={{fontFamily: 'Montserrat', color: '#4F5359'}}>
@@ -29,7 +28,7 @@ function App() {
         <Welcome>
         Welcome, <b>User</b>!
         </Welcome>
-        <button onClick={getMyName}>{myName}</button>
+        {myName}
         <Welcome>How will you hit your quota this quarter?</Welcome>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
