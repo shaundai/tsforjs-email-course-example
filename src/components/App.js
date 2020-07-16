@@ -1,24 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import './App.css';
-import getSalesLoftApi from './util/returnName'
 import salesloftlogo from '../images/salesloftlogo.png'
 import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
 function App() {
-
-  const [myName, setMyName] = useState('');
-
-  useEffect(() => {
-    const getMyName = async () => {
-      const name = (await getSalesLoftApi()).id;
-      setMyName(name);
-      console.log(name)
-      }
-      getMyName();
-}, []);
 
   return (
     <div style={{fontFamily: 'Montserrat', color: '#4F5359'}}>
@@ -27,7 +15,7 @@ function App() {
         </Header>
         <div style={{paddingTop: '.3em'}}>
         <Welcome>
-        Welcome, <b>User {myName}</b>!
+        Welcome, <b>User</b>!
         </Welcome>
         
         <Welcome>How will you hit your quota this quarter?</Welcome>
