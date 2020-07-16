@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useAsync } from 'react-use';
 import styled from 'styled-components';
 import './App.css';
+
+import getSalesLoftApi from './util/salesloftApi'
 import salesloftlogo from '../images/salesloftlogo.png'
 import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
 function App() {
+  const [userInfo, setUserInfo] = useState({firstName: '', lastName: ''})
+
+ useAsync(async () => {
+    try {
+      const { first_name: firstName, last_name: lastName } = (await getSalesLoftApi()).data.data
+      setUserInfo({firstName: firstName, lastName: lastName})
+    }
+    catch(err){
+      return err
+    }
+  }, [])
 
   return (
     <div style={{fontFamily: 'Montserrat', color: '#4F5359'}}>
@@ -15,7 +29,7 @@ function App() {
         </Header>
         <div style={{paddingTop: '.3em'}}>
         <Welcome>
-        Welcome, <b>User</b>!
+        Welcome, <b>{userInfo.firstName}</b>!
         </Welcome>
         
         <Welcome>How will you hit your quota this quarter?</Welcome>
