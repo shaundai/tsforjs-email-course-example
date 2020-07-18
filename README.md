@@ -11,6 +11,6 @@ Project still under contruction, but you can check out the progress on the [live
 Check out the [back-end code](https://github.com/shaundai/shaundai-salesloft-node).
 
 ## Project Screen Shots
-
+![Homepage screenshot](./public/images/homepage.png?raw=true "Homepage")
 
 ## Reflection
