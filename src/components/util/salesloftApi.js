@@ -13,7 +13,6 @@ const SalesLoft = {
                     url: 'http://localhost:3001/userid',
                     data: {
                         "id": id,
-                        "float": "hey"
                     },
                     headers: {
                         'Content-Type': 'application/json'
