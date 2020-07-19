@@ -21,7 +21,7 @@ const Tiers = ({list}) => {
 
                     <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '1em'}}>
                     <div style={{fontSize: '.7em'}}>Account Owner </div>
-                    <div style={{fontSize: '.7em'}}>Last Contacted: </div>
+                    <div style={{fontSize: '.7em'}}>Last Contacted: {item.last_contacted_at}</div>
                     </div>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                     <a href={item.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .4em', height: '1.2em'}} /></a>
