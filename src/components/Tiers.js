@@ -6,15 +6,17 @@ import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
-const Tiers = () => {
+const Tiers = ({list}) => {
         return (
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
             <TierBlock>
                 <TierTitle>Tier 1</TierTitle>
-                <ListAccount>
+                <ul style={{listStyleType: 'none', margin: 0, padding: 0, overflow: 'hidden'}}>
+                {list.slice(0,4).map(item => (
+                <ListAccount key={item.id}>
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <div><b>Account</b></div>
-                    <div style={{fontSize: '.7em'}}># Employees</div>
+                    <div style={{fontSize: '.8em'}}><b>{item.name}</b></div>
+                    {item.size ? <div style={{fontSize: '.7em'}}>{item.size} employees</div> : null}
                     </div>
 
                     <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '1em'}}>
@@ -22,11 +24,13 @@ const Tiers = () => {
                     <div style={{fontSize: '.7em'}}>Last Contacted: </div>
                     </div>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
-                    <img alt="Salesforce" src={salesforce} style={{margin: '0 .4em', height: '1.2em'}} />
-                    <img alt="LinkedIn" src={linkedin} style={{margin: '0 .4em', height: '1.2em'}} />
-                    <img alt="Company Website"  src={website} style={{margin: '0 .4em', height: '1.2em'}}/>
+                    <a href={item.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .4em', height: '1.2em'}} /></a>
+                    <a href={item.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .4em', height: '1.2em'}} /></a>
+                    <a href={item.website}><img alt="Company Website"  src={website} style={{margin: '0 .4em', height: '1.2em'}}/></a>
                     </div>
                 </ListAccount>
+                ))}
+                </ul>
                 </TierBlock>
             <TierBlock>
                 <TierTitle>Tier 2</TierTitle>
@@ -54,7 +58,7 @@ const TierTitle = styled.div`
   font-weight: bold;
   padding: .5em 0;
 `
-const ListAccount = styled.div`
+const ListAccount = styled.li`
   border-bottom: 1px solid rgba(0,0,0,.1);
   padding: .5em;
 `

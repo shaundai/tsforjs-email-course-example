@@ -13,6 +13,7 @@ import Tiers from './Tiers'
 function App() {
   const [userInfo, setUserInfo] = useState({firstName: '', lastName: ''})
   const [accountInfo, setAccountInfo] = useState({name: '', website: '', size: '', linkedin_url: ''})
+  const [allAccountInfo, setAllAccountInfo] = useState([])
 
  useAsync(async () => {
     try {
@@ -20,6 +21,8 @@ function App() {
       setUserInfo({firstName: firstName, lastName: lastName})
       const { name, website, size, linkedin_url } = (await SalesLoft.getAccountInfo()).data.data[1]
       setAccountInfo({ name, website, size, linkedin_url })
+      const allInfo = (await SalesLoft.getAccountInfo()).data.data
+      setAllAccountInfo(allInfo)
     }
     catch(err){                 
       return err
@@ -35,7 +38,7 @@ function App() {
         </Welcome>
         <Welcome>How will you hit your quota this quarter?</Welcome>
         </div>
-        <Tiers />
+        <Tiers list={allAccountInfo}/>
     </div>
   );
 }
