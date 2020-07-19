@@ -12,6 +12,7 @@ import Tiers from './Tiers'
 
 function App() {
   const [userInfo, setUserInfo] = useState({firstName: '', lastName: ''})
+  const [accountInfo, setAccountInfo] = useState({})
 
  useAsync(async () => {
     try {
@@ -30,7 +31,6 @@ function App() {
         <Welcome>
         Welcome, <b>{userInfo.firstName}</b>!
         </Welcome>
-        
         <Welcome>How will you hit your quota this quarter?</Welcome>
         </div>
         <Tiers />
