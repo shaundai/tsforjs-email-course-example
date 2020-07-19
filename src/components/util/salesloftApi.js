@@ -1,7 +1,12 @@
 const axios = require('axios');
 
-const getSalesLoftApi = () => {
-        return axios.get(`http://localhost:3001/api/salesloft`)
+
+const SalesLoft = {
+        
+        getUserInfo(){
+                return axios.get(`http://localhost:3001/api/user`)
+        }
+
 }
 
-export default getSalesLoftApi;
+export default SalesLoft;

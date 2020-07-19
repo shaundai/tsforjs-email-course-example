@@ -3,8 +3,13 @@ import { useAsync } from 'react-use';
 import styled from 'styled-components';
 import './App.css';
 
-import getSalesLoftApi from './util/salesloftApi'
-import salesloftlogo from '../images/salesloftlogo.png'
+//apis
+import SalesLoft from './util/salesloftApi'
+
+//app components
+import AppHeader from './AppHeader';
+
+//images
 import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
@@ -14,7 +19,7 @@ function App() {
 
  useAsync(async () => {
     try {
-      const { first_name: firstName, last_name: lastName } = (await getSalesLoftApi()).data.data
+      const { first_name: firstName, last_name: lastName } = (await SalesLoft.getUserInfo()).data.data
       setUserInfo({firstName: firstName, lastName: lastName})
     }
     catch(err){
@@ -24,9 +29,7 @@ function App() {
 
   return (
     <div style={{fontFamily: 'Montserrat', color: '#4F5359'}}>
-        <Header>
-          <img alt="SalesLoft Logo" src={salesloftlogo} style={{height: '2em', marginLeft: '1em'}}/>
-        </Header>
+        <AppHeader />
         <div style={{paddingTop: '.3em'}}>
         <Welcome>
         Welcome, <b>{userInfo.firstName}</b>!
@@ -66,12 +69,6 @@ function App() {
 }
 
 export default App;
-
-const Header = styled.div`
-  color: white;
-  background-color: #0d163a;
-  padding: .7em 0;
-`
 
 const Welcome = styled.div`
   padding-left: 1.5em;
