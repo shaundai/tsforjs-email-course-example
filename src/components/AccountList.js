@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { parseISO } from 'date-fns'
+import { formatDistanceToNowStrict } from 'date-fns'
 
 //images
 import linkedin from '../images/linkedin.png'
@@ -10,25 +10,30 @@ import website from '../images/websiteicon.png'
 const AccountList = ({tier, accounts}) => {
 
   const parsedDate = (date) => {
-    return parseISO(date).toString().substr(0,15)
+    const year =  date.substr(0,4)
+    const month = (date.substr(5,2))
+    const day = date.substr(8,2)
+    return formatDistanceToNowStrict(new Date(`${year},${month},${day}`))
   }
         return (
             <div>
                 <TierTitle>Tier {tier}  ({accounts.length})</TierTitle>
                 <ul style={{listStyleType: 'none', margin: 0, padding: 0, overflow: 'hidden'}}>
-                {accounts.slice(0,4).map(item => (
+                {accounts.slice(0,5).map(item => (
                 <ListAccount key={item.id}>
-                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <div style={{fontSize: '.8em'}}><b>{item.name}</b></div>
+
+                    <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '.2em'}}>
+                      <div style={{display: 'flex', flexDirection: 'column'}}>
+                        <div style={{fontSize: '.8em'}}><b>{item.name}</b></div>
+                        <div style={{fontSize: '.7em'}}>Last Contacted: {parsedDate(item.last_contacted_at)} ago</div>
+                      </div>
+                      <div style={{display: 'flex', alignItems: 'center'}}>
+                      <a href={item.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .3em', height: '1.2em'}} /></a>
+                      <a href={item.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .3em', height: '1.2em'}} /></a>
+                      <a href={item.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
                     </div>
-                    <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '1em'}}>
-                    <div style={{fontSize: '.7em'}}>Last Contacted: {parsedDate(item.last_contacted_at)}</div>
                     </div>
-                    <div style={{display: 'flex', justifyContent: 'center'}}>
-                    <a href={item.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .4em', height: '1.2em'}} /></a>
-                    <a href={item.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .4em', height: '1.2em'}} /></a>
-                    <a href={item.website}><img alt="Company Website"  src={website} style={{margin: '0 .4em', height: '1.2em'}}/></a>
-                    </div>
+
                 </ListAccount>
                 ))}
                 </ul>
