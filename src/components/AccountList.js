@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { parseISO } from 'date-fns'
 
 //images
 import linkedin from '../images/linkedin.png'
@@ -7,6 +8,10 @@ import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
 const AccountList = ({tier, accounts}) => {
+
+  const parsedDate = (date) => {
+    return parseISO(date).toString().substr(0,15)
+  }
         return (
             <div>
                 <TierTitle>Tier {tier}  ({accounts.length})</TierTitle>
@@ -15,12 +20,9 @@ const AccountList = ({tier, accounts}) => {
                 <ListAccount key={item.id}>
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                     <div style={{fontSize: '.8em'}}><b>{item.name}</b></div>
-                    {item.size ? <div style={{fontSize: '.7em'}}>{item.size} employees</div> : null}
                     </div>
-
                     <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '1em'}}>
-                    <div style={{fontSize: '.7em'}}>Account Owner </div>
-                    <div style={{fontSize: '.7em'}}>Last Contacted: {item.last_contacted_at}</div>
+                    <div style={{fontSize: '.7em'}}>Last Contacted: {parsedDate(item.last_contacted_at)}</div>
                     </div>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                     <a href={item.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .4em', height: '1.2em'}} /></a>
