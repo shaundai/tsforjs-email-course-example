@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { formatDistanceToNowStrict } from 'date-fns'
+import { FixedSizeList as List } from 'react-window';
 
 //images
 import linkedin from '../images/linkedin.png'
@@ -22,7 +23,7 @@ const AccountList = ({tier, accounts}) => {
                 {accounts.slice(0,5).map(item => (
                 <ListAccount key={item.id}>
 
-                    <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '.2em'}}>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
                       <div style={{display: 'flex', flexDirection: 'column'}}>
                         <div style={{fontSize: '.8em'}}><b>{item.name}</b></div>
                         <div style={{fontSize: '.7em'}}>Last Contacted: {parsedDate(item.last_contacted_at)} ago</div>
