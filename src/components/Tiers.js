@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import AccountList from './AccountList'
-import AccountList2 from './accountlist2'
 
 
 const Tiers = ({list}) => {
@@ -27,7 +26,7 @@ const Tiers = ({list}) => {
             </TierBlock>
 
             <TierBlock>
-                <AccountList2 tier={3} accounts={TierThree}/>
+                <AccountList tier={3} accounts={TierThree}/>
             </TierBlock>
         </div>
         )
@@ -47,6 +46,5 @@ const TierBlock = styled.div`
   border: 1px solid #e5e5e5;
   width: calc(75%/3);
   margin: 0 2em;
-  height: 60vh;
   border-right: 2px solid rgba(0,0,0,.1);
 `

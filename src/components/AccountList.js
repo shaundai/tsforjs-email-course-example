@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { formatDistanceToNowStrict } from 'date-fns'
-import { FixedSizeList as List } from 'react-window';
 
 //images
 import linkedin from '../images/linkedin.png'
@@ -19,8 +18,8 @@ const AccountList = ({tier, accounts}) => {
         return (
             <div>
                 <TierTitle>Tier {tier}  ({accounts.length})</TierTitle>
-                <ul style={{listStyleType: 'none', margin: 0, padding: 0, overflow: 'hidden'}}>
-                {accounts.slice(0,5).map(item => (
+                <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '50vh', overflow: 'scroll'}}>
+                {accounts.map(item => (
                 <ListAccount key={item.id}>
 
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
