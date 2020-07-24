@@ -3,54 +3,53 @@ import styled from 'styled-components'
 import AccountList from './AccountList'
 import PeopleAtAccount from './PeopleAtAccount'
 
+//api
+import SalesLoft from './util/salesloftApi'
 
 const Tiers = ({list}) => {
 
-  const [clickedAccountId, setClickedAccountId] = useState('')
   const [peopleAtAccountActive, setPeopleAtAccountActive] = useState(false)
+  const [peopleList, setPeopleList] = useState([])
 
-
-  const TierOne = list.filter(item =>{
+  const TierOne = list.filter(item => {
     return item.account_tier && item.account_tier.id === 13
   })
-  const TierTwo = list.filter(item =>{
+  const TierTwo = list.filter(item => {
     return item.account_tier && item.account_tier.id === 14
   })
-  const TierThree = list.filter(item =>{
+  const TierThree = list.filter(item => {
     return item.account_tier && item.account_tier.id === 15
   })
 
-  const showPeopleList = (id) => {
-    setClickedAccountId(id)
-    setPeopleAtAccountActive(true)
-  }
+  const getPeopleInfo = async (id) => {
+    try {
+        const peopleData = (await SalesLoft.getPeopleAtAccounts(id)).data.data
+        setPeopleList(peopleData)
+        setPeopleAtAccountActive(true)
+    }
+    catch(err){
+      console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
+    }
+}
 
         return (
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
             <TierBlock>
-                <AccountList tier={1} accounts={TierOne} showPeopleList={showPeopleList} />
+                <AccountList tier={1} accounts={TierOne} showPeopleList={getPeopleInfo} />
               </TierBlock>
             <TierBlock>
-                <AccountList tier={2} accounts={TierTwo} showPeopleList={showPeopleList}/>
+                <AccountList tier={2} accounts={TierTwo} showPeopleList={getPeopleInfo} />
             </TierBlock>
 
             <TierBlock>
-                <AccountList tier={3} accounts={TierThree} showPeopleList={showPeopleList}/>
+                <AccountList tier={3} accounts={TierThree} showPeopleList={getPeopleInfo} />
             </TierBlock>
-            <PeopleAtAccount isShowing={peopleAtAccountActive}/>
+            {peopleAtAccountActive ? <PeopleAtAccount people={peopleList} /> : null}
         </div>
         )
     }
 
 export default Tiers 
-
-const TierTitle = styled.div`
-  border-bottom: 2px solid rgba(0,0,0,.1);
-  background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03)),#fff;
-  text-align: center;
-  font-weight: bold;
-  padding: .5em 0;
-`
 
 const TierBlock = styled.div`
   border: 1px solid #e5e5e5;
