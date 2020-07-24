@@ -19,7 +19,7 @@ function App() {
       const { id, first_name: firstName, last_name: lastName } = (await SalesLoft.getUserInfo()).data.data
       await SalesLoft.sendUserInfo(id)
       setUserInfo({id: id, firstName: firstName, lastName: lastName})
-      const allInfo = (await SalesLoft.getAccountInfo()).data.data
+      const allInfo = (await SalesLoft.getAllAccountInfo(id)).data.data
       setAllAccountInfo(allInfo)
     }
     catch(err){                 

@@ -20,9 +20,14 @@ const SalesLoft = {
                 })
             },
 
-        getAccountInfo(){
-                return axios.get(`http://localhost:3001/api/accounts`)
+        getAllAccountInfo(userId){
+                return axios.get(`http://localhost:3001/api/accounts?sort_by=last_contacted_at&per_page=100&owner_id%5B%5D=${userId}`)
         },
+
+        getSingleAccountInfo(accountIds){
+                return axios.get(`http://localhost:3001/api/accounts?ids%5B%5D=${accountIds}`)
+        },
+
 //AccountIds below needs to be an array with commas
         getPeopleAtAccounts(AccountIds){
                 return axios.get(`http://localhost:3001/api/accounts/people?account_id%5B%5D=${AccountIds}`)
