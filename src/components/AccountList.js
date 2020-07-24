@@ -7,7 +7,7 @@ import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
-const AccountList = ({tier, accounts}) => {
+const AccountList = ({tier, accounts, showPeopleList}) => {
 
   const parsedDate = (date) => {
     const year =  date.substr(0,4)
@@ -25,7 +25,7 @@ const AccountList = ({tier, accounts}) => {
 
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                       <div style={{display: 'flex', flexDirection: 'column'}}>
-                        <div style={{fontSize: '.8em'}} ><b>{item.name}</b></div>
+                        <div style={{fontSize: '.8em'}} onClick={() => showPeopleList(item.id)}><b>{item.name}</b></div>
                         <div style={{fontSize: '.7em'}}>Last Contacted: {parsedDate(item.last_contacted_at)} ago</div>
                       </div>
                       <div style={{display: 'flex', alignItems: 'center'}}>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import AccountList from './AccountList'
 import PeopleAtAccount from './PeopleAtAccount'
@@ -30,13 +30,12 @@ const Tiers = ({list}) => {
             <TierBlock>
                 <AccountList tier={1} accounts={TierOne} showPeopleList={showPeopleList} />
               </TierBlock>
-
             <TierBlock>
-                <AccountList tier={2} accounts={TierTwo}/>
+                <AccountList tier={2} accounts={TierTwo} showPeopleList={showPeopleList}/>
             </TierBlock>
 
             <TierBlock>
-                <AccountList tier={3} accounts={TierThree}/>
+                <AccountList tier={3} accounts={TierThree} showPeopleList={showPeopleList}/>
             </TierBlock>
             <PeopleAtAccount isShowing={peopleAtAccountActive}/>
         </div>
