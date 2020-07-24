@@ -13,6 +13,7 @@ import Tiers from './Tiers'
 function App() {
   const [userInfo, setUserInfo] = useState({id: '', firstName: '', lastName: ''})
   const [allAccountInfo, setAllAccountInfo] = useState([])
+  const [peopleAtAccounts, setPeopleAtAccounts] = useState([])
 
  useAsync(async () => {
     try {

@@ -22,6 +22,10 @@ const SalesLoft = {
 
         getAccountInfo(){
                 return axios.get(`http://localhost:3001/api/accounts`)
+        },
+//AccountIds below needs to be an array with commas
+        getPeopleAtAccounts(AccountIds){
+                return axios.get(`http://localhost:3001/api/accounts/people?account_id%5B%5D=${AccountIds}`)
         }
 }
 

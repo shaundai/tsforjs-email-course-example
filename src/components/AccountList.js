@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { formatDistanceToNowStrict } from 'date-fns'
 
@@ -15,6 +15,7 @@ const AccountList = ({tier, accounts}) => {
     const day = date.substr(8,2)
     return formatDistanceToNowStrict(new Date(`${year},${month},${day}`))
   }
+
         return (
             <div>
                 <TierTitle>Tier {tier}  ({accounts.length})</TierTitle>
@@ -24,7 +25,7 @@ const AccountList = ({tier, accounts}) => {
 
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                       <div style={{display: 'flex', flexDirection: 'column'}}>
-                        <div style={{fontSize: '.8em'}}><b>{item.name}</b></div>
+                        <div style={{fontSize: '.8em'}} ><b>{item.name}</b></div>
                         <div style={{fontSize: '.7em'}}>Last Contacted: {parsedDate(item.last_contacted_at)} ago</div>
                       </div>
                       <div style={{display: 'flex', alignItems: 'center'}}>

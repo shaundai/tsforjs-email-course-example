@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import AccountList from './AccountList'
+import PeopleAtAccount from './PeopleAtAccount'
 
 
 const Tiers = ({list}) => {
+
+  const [clickedAccountId, setClickedAccountId] = useState('')
+  const [peopleAtAccountActive, setPeopleAtAccountActive] = useState(false)
+
 
   const TierOne = list.filter(item =>{
     return item.account_tier && item.account_tier.id === 13
@@ -15,10 +20,15 @@ const Tiers = ({list}) => {
     return item.account_tier && item.account_tier.id === 15
   })
 
+  const showPeopleList = (id) => {
+    setClickedAccountId(id)
+    setPeopleAtAccountActive(true)
+  }
+
         return (
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
             <TierBlock>
-                <AccountList tier={1} accounts={TierOne}/>
+                <AccountList tier={1} accounts={TierOne} showPeopleList={showPeopleList} />
               </TierBlock>
 
             <TierBlock>
@@ -28,6 +38,7 @@ const Tiers = ({list}) => {
             <TierBlock>
                 <AccountList tier={3} accounts={TierThree}/>
             </TierBlock>
+            <PeopleAtAccount isShowing={peopleAtAccountActive}/>
         </div>
         )
     }
