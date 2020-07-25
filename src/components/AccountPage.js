@@ -21,9 +21,9 @@ const findAccountTier = (tier) => {
 
 const AccountPage = ({account}) =>  {
         return (
-            <div style={{height: '70vh'}}>
+            <div style={{height: '65vh'}}>
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                <div>{findAccountTier(account.account_tier.id)}</div> 
+                <div style={{fontSize: '.8em', width: '100%', paddingRight: '8vh', textAlign: 'right'}}>{findAccountTier(account.account_tier.id)}</div> 
                 <div style={{fontSize: '1.2em'}}>{account.name}</div>
                 <div style={{fontSize: '.8em'}}>{account.phone}</div>
                 <div><a href={account.website} style={{fontSize: '.8em', color: 'blue', textDecoration: 'none', fontWeight: 'bold'}}>{account.website}</a></div>
@@ -35,7 +35,7 @@ const AccountPage = ({account}) =>  {
             </div>
 
             <div>
-
+Not sure what to put here yet
             </div>
 
             </div>
