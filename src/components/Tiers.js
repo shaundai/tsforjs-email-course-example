@@ -28,7 +28,7 @@ const Tiers = ({list}) => {
         const peopleData = (await SalesLoft.getPeopleAtAccounts(accountId)).data.data
         const accountData = (await SalesLoft.getSingleAccountInfo(accountId)).data.data
         setPeopleList(peopleData)
-        setAccountInfo(accountData)
+        setAccountInfo(accountData[0])
         setPeopleAtAccountActive(true)
     }
     catch(err){
@@ -40,8 +40,8 @@ const Tiers = ({list}) => {
         <div> 
             {peopleAtAccountActive ?
 
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
-              <AccountPage accountInfo={accountInfo}/>
+            <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', height: '70vh'}}>
+              <AccountPage account={accountInfo}/>
               <PeopleAtAccount people={peopleList} />
             </div>
             : 

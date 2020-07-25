@@ -18,7 +18,7 @@ const PeopleAtAccount = ({people}) => {
     
             return (
                 <div>
-                    <TierTitle>Contacts at {people[0].person_company_name}</TierTitle>
+                    <TierTitle>Contacts ({people.length})</TierTitle>
                     <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '50vh', overflow: 'scroll'}}>
                     {people.map(item => (
                     <ListAccount key={item.id}>
