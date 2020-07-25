@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import AccountList from './AccountList'
+import AccountPage from './AccountPage'
 import PeopleAtAccount from './PeopleAtAccount'
 
 //api
@@ -36,18 +37,26 @@ const Tiers = ({list}) => {
 }
 
         return (
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
-            <TierBlock>
-                <AccountList tier={1} accounts={TierOne} showPeopleList={getPeopleInfo} />
-              </TierBlock>
-            <TierBlock>
-                <AccountList tier={2} accounts={TierTwo} showPeopleList={getPeopleInfo} />
-            </TierBlock>
+        <div> 
+            {peopleAtAccountActive ?
 
-            <TierBlock>
-                <AccountList tier={3} accounts={TierThree} showPeopleList={getPeopleInfo} />
-            </TierBlock>
-            {peopleAtAccountActive ? <PeopleAtAccount people={peopleList} /> : null}
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
+              <AccountPage accountInfo={accountInfo}/>
+              <PeopleAtAccount people={peopleList} />
+            </div>
+            : 
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
+              <TierBlock>
+                  <AccountList tier={1} accounts={TierOne} showPeopleList={getPeopleInfo} />
+                </TierBlock>
+              <TierBlock>
+                  <AccountList tier={2} accounts={TierTwo} showPeopleList={getPeopleInfo} />
+              </TierBlock>
+              <TierBlock>
+                  <AccountList tier={3} accounts={TierThree} showPeopleList={getPeopleInfo} />
+              </TierBlock>
+            </div>
+            }
         </div>
         )
     }
