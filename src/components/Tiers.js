@@ -10,6 +10,7 @@ const Tiers = ({list}) => {
 
   const [peopleAtAccountActive, setPeopleAtAccountActive] = useState(false)
   const [peopleList, setPeopleList] = useState([])
+  const [accountInfo, setAccountInfo] = useState({})
 
   const TierOne = list.filter(item => {
     return item.account_tier && item.account_tier.id === 13
@@ -21,10 +22,12 @@ const Tiers = ({list}) => {
     return item.account_tier && item.account_tier.id === 15
   })
 
-  const getPeopleInfo = async (id) => {
+  const getPeopleInfo = async (accountId) => {
     try {
-        const peopleData = (await SalesLoft.getPeopleAtAccounts(id)).data.data
+        const peopleData = (await SalesLoft.getPeopleAtAccounts(accountId)).data.data
+        const accountData = (await SalesLoft.getSingleAccountInfo(accountId)).data.data
         setPeopleList(peopleData)
+        setAccountInfo(accountData)
         setPeopleAtAccountActive(true)
     }
     catch(err){
