@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { formatDistanceToNowStrict } from 'date-fns'
+import utilFunctions from './util/utilFunctions'
+
+import CurrentCadences from './CurrentCadences'
 
 //images
 import linkedin from '../images/linkedin.png'
@@ -8,13 +10,6 @@ import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
 const PeopleAtAccount = ({people}) => {
-
-    const parsedDate = (date) => {
-        const year =  date.substr(0,4)
-        const month = (date.substr(5,2))
-        const day = date.substr(8,2)
-        return formatDistanceToNowStrict(new Date(`${year},${month},${day}`))
-      }
     
             return (
                 <div style={{width: '50vw', margin: 0, padding: 0}}>
@@ -25,7 +20,7 @@ const PeopleAtAccount = ({people}) => {
                         <div style={{display: 'flex', justifyContent: 'space-between'}}>
                           <div style={{display: 'flex', flexDirection: 'column'}}>
                             <div style={{fontSize: '.8em'}}><b>{item.first_name} {item.last_name}</b></div>
-                            {item.last_contacted_at ? <div style={{fontSize: '.7em'}}>Last Contacted: {item.last_contacted_at && parsedDate(item.last_contacted_at)} ago</div> : <div style={{fontSize: '.7em'}}>Never Contacted</div>}
+                            {item.last_contacted_at ? <div style={{fontSize: '.7em'}}>Last Contacted: {item.last_contacted_at && utilFunctions.parsedDate(item.last_contacted_at)} ago</div> : <div style={{fontSize: '.7em'}}>Never Contacted</div>}
                             <div style={{fontSize: '.6em', color: 'blue'}}>show {item.first_name}'s cadences</div>
                           </div>
                           <div style={{display: 'flex', alignItems: 'center'}}>
