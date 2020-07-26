@@ -1,6 +1,5 @@
 const axios = require('axios');
 
-
 const SalesLoft = {
         
         getUserInfo(){
@@ -19,9 +18,11 @@ const SalesLoft = {
                 return axios.get(`http://localhost:3001/api/account/${AccountIds}`)
         },
         getListOfCadencesByPerson(PersonId){
-                return axios.get(`http://localhost:3001/api/cadence/${PersonId}`)
+                return axios.get(`http://localhost:3001/api/cadence/current/${PersonId}`)
         },
-
+        getCadenceNameById(CadenceId){
+                return axios.get(`http://localhost:3001/api/cadence/name/${CadenceId}`)
+        }
 
 }
 

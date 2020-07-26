@@ -22,7 +22,6 @@ const PeopleAtAccount = ({people}) => {
                     <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '60vh', overflow: 'scroll'}}>
                     {people.map(item => (
                     <ListAccount key={item.id}>
-{item.id}
                         <div style={{display: 'flex', justifyContent: 'space-between'}}>
                           <div style={{display: 'flex', flexDirection: 'column'}}>
                             <div style={{fontSize: '.8em'}}><b>{item.first_name} {item.last_name}</b></div>
