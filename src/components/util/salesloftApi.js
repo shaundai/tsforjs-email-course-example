@@ -17,7 +17,7 @@ const SalesLoft = {
         getSingleAccountInfo(AccountIds){
                 return axios.get(`http://localhost:3001/api/account/${AccountIds}`)
         },
-        getListOfCadencesByPerson(PersonId){
+        getIdsOfCadencesByPerson(PersonId){
                 return axios.get(`http://localhost:3001/api/cadence/current/${PersonId}`)
         },
         getCadenceNameById(CadenceId){

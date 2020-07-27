@@ -16,7 +16,6 @@ const AccountList = ({tier, accounts, showPeopleList}) => {
                 <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '50vh', overflow: 'scroll'}}>
                 {accounts.map(item => (
                 <ListAccount key={item.id}>
-
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                       <div style={{display: 'flex', flexDirection: 'column'}}>
                         <div style={{fontSize: '.8em'}} onClick={() => showPeopleList(item.id)}><b>{item.name}</b></div>
