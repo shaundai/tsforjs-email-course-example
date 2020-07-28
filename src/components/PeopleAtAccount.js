@@ -12,9 +12,9 @@ import website from '../images/websiteicon.png'
 const PeopleAtAccount = ({people}) => {
 
             return (
-                <div style={{width: '50vw', margin: 0, padding: 0}}>
+                <div style={{width: '50vw', margin: 0, padding: 0, border: '1px solid rgb(229, 229, 229)', }}>
                     <TierTitle>Contacts ({people.length})</TierTitle>
-                    <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '60vh', overflow: 'scroll'}}>
+                    <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '60vh', overflow: 'scroll', backgroundColor: 'white'}}>
                     {people.map(person => (
                     <ListPeople key={person.id}>
                         <div style={{display: 'flex', justifyContent: 'space-between'}}>

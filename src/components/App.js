@@ -27,7 +27,7 @@ function App() {
   }, [])
 
   return (
-    <div style={{fontFamily: 'Montserrat', color: '#4F5359'}}>
+    <div style={{fontFamily: 'Montserrat', color: '#4F5359', backgroundColor: '#F7F9FA'}}>
         <AppHeader />
         <div style={{paddingTop: '.3em'}}>
         <Welcome>

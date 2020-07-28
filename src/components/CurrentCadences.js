@@ -27,7 +27,7 @@ const CurrentCadences = ({personId, firstName}) => {
                 {showCadenceList ?
                 <div>
                     {cadenceNames ? cadenceNames.map(cadence => {
-                    return <div style={{fontSize: '.6em', marginLeft: '2em'}}><b>{cadence.name}</b> {cadence.team_cadence ? '(team)' : '(personal)'}</div>
+                    return <div style={{fontSize: '.6em', marginLeft: '2em'}}><b>{cadence.name}</b> {cadence.team_cadence ? '(team)' : '(personal)'}  <span style={{color: 'blue'}}>remove</span></div> 
                 }) : null}
                 </div> : null}
             </div>
