@@ -47,7 +47,7 @@ const Tiers = ({list}) => {
               </div>
             </div>
             : 
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '72vh'}}>
               <TierBlock>
                   <AccountList tier={1} accounts={TierOne} showPeopleList={getPeopleInfo} />
                 </TierBlock>
@@ -67,7 +67,7 @@ export default Tiers
 
 const TierBlock = styled.div`
   border: 1px solid #e5e5e5;
-  width: calc(75%/3);
+  width: calc(86%/3);
   margin: 0 2em;
   border-right: 2px solid rgba(0,0,0,.1);
 `

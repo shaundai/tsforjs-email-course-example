@@ -22,12 +22,12 @@ function App() {
       setAllAccountInfo(allInfo)
     }
     catch(err){                 
-      return err
+      console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
     }
   }, [])
 
   return (
-    <div style={{fontFamily: 'Montserrat', color: '#4F5359', backgroundColor: '#F7F9FA'}}>
+    <div style={{fontFamily: 'Montserrat', color: '#4F5359', backgroundColor: '#F7F9FA', height: '100vh'}}>
         <AppHeader />
         <div style={{paddingTop: '.3em'}}>
         <Welcome>

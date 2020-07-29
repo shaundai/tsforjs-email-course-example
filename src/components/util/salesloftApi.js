@@ -29,6 +29,10 @@ const SalesLoft = {
 
         removePersonFromCadence(CadenceId){
                 return axios.get(`http://localhost:3001/api/cadence/remove/${CadenceId}`)
+        },
+
+        getContactInfo(PersonId){
+                return axios.get(`http://localhost:3001/api/people/id/${PersonId}`)
         }
 
 }
