@@ -13,15 +13,14 @@ const CurrentCadences = ({personId, firstName}) => {
         try {
             const cadenceMembershipList = (await SalesLoft.getIdsOfCadencesByPerson(personid)).data.data
             const cadenceIdList = cadenceMembershipList.map(membership => {
-                return {cadenceId: membership.cadence.id, membershipId: membership.id, cadenceActualName: ''}
+                return {cadenceId: membership.cadence.id, membershipId: membership.id}
             })
-            const allMemberships = cadenceIdList.map(mem => {
+            const allMemberships = cadenceIdList.forEach(mem => {
                 SalesLoft.getCadenceNameById(mem.cadenceId).then(response => {
                     mem.cadenceActualName = response.data.data[0].name
                 })
                 return mem
             })
-            //maybe push this part onto the rest?
             setCadenceInfo(allMemberships)
             setShowCadenceList(showCadenceList ? false : true)
         }
@@ -34,7 +33,7 @@ const CurrentCadences = ({personId, firstName}) => {
             <div>
                 <div style={{fontSize: '.7em', color: '#3C9CD2'}} onClick={() => getCadenceList(personId)}>{showCadenceList ? `hide ${firstName}'s cadences` : `show ${firstName}'s cadences`}</div>
                 {showCadenceList ?
-                <CadenceList cadenceInfo={cadenceInfo[0]}/> : null}
+                <CadenceList cadenceInfo={cadenceInfo}/> : null}
             </div>
         )
 }
