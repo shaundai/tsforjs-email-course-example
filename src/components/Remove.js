@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import RemoveAlertModal from './RemoveAlertModal'
 import SalesLoft from './util/salesloftApi'
 
 
 const Remove = ({personId, cadenceId, getCadenceList}) => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const showWarningModal = () => {
+        setIsModalOpen(isModalOpen ? false : true)
+    }
 
     const removeFromCadence = async () => {
         try {
@@ -17,11 +24,13 @@ const Remove = ({personId, cadenceId, getCadenceList}) => {
     }
 
         return (
-            <span style={{color: '#3C9CD2'}} onClick={() => removeFromCadence(cadenceId)}>
-                remove
+            <span style={{color: '#3C9CD2'}} onClick={() => showWarningModal()}>
+                remove {isModalOpen ? <RemoveAlertModal removeFromCadence={removeFromCadence} showWarningModal={showWarningModal} cadenceId={cadenceId}/> : null}
             </span>
         )
     
 }
+
+//onClick={() => removeFromCadence(cadenceId)}
 
 export default Remove
