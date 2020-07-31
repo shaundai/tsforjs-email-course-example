@@ -33,6 +33,10 @@ const SalesLoft = {
 
         getContactInfo(PersonId){
                 return axios.get(`http://localhost:3001/api/people/id/${PersonId}`)
+        },
+
+        getCadenceMembershipByPersonIdAndCadenceId(PersonId, CadenceId){
+                return axios.get(`http://localhost:3001/api/cadence/membership?personid=${PersonId}&cadenceid=${CadenceId}`)
         }
 
 }
