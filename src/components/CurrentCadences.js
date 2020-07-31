@@ -18,7 +18,6 @@ const CurrentCadences = ({personId, firstName}) => {
             const cadenceNames = (await SalesLoft.getCadenceNameById(cadenceIdList)).data.data
             setCadenceInfo(cadenceNames)
             setShowCadenceList(showCadenceList ? false : true)
-            //need to fix so that cadence list doesn't disappear when you remove someone from a cadence
         }
         catch(err){
           console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
@@ -29,7 +28,7 @@ const CurrentCadences = ({personId, firstName}) => {
             <div>
                 <div style={{fontSize: '.7em', color: '#3C9CD2'}} onClick={() => getCadenceList(personId)}>{showCadenceList ? `hide ${firstName}'s cadences` : `show ${firstName}'s cadences`}</div>
                 {showCadenceList ?
-                <CadenceList cadenceInfo={cadenceInfo} personId={personId} getCadenceList={getCadenceList} /> : null}
+                <CadenceList cadenceInfo={cadenceInfo} personId={personId} getCadenceList={getCadenceList} firstName={firstName} /> : null}
             </div>
         )
 }

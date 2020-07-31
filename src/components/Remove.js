@@ -3,7 +3,7 @@ import RemoveAlertModal from './RemoveAlertModal'
 import SalesLoft from './util/salesloftApi'
 
 
-const Remove = ({personId, cadenceId, getCadenceList}) => {
+const Remove = ({personId, cadenceId, getCadenceList, cadenceName, firstName}) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -25,7 +25,7 @@ const Remove = ({personId, cadenceId, getCadenceList}) => {
 
         return (
             <span style={{color: '#3C9CD2'}} onClick={() => showWarningModal()}>
-                remove {isModalOpen ? <RemoveAlertModal removeFromCadence={removeFromCadence} showWarningModal={showWarningModal} cadenceId={cadenceId}/> : null}
+                remove {isModalOpen ? <RemoveAlertModal removeFromCadence={removeFromCadence} showWarningModal={showWarningModal} cadenceId={cadenceId} cadenceName={cadenceName} firstName={firstName}/> : null}
             </span>
         )
     
