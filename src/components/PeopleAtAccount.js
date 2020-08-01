@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import utilFunctions from './util/utilFunctions'
 import CurrentCadences from './CurrentCadences'
+import AddToCadence from './AddToCadence/AddToCadence'
 
 //images
 import linkedin from '../images/linkedin.png'
@@ -24,10 +25,11 @@ const PeopleAtAccount = ({people}) => {
                             
                             <CurrentCadences personId={person.id} firstName={person.first_name}/>
                           </div>
-                          <div style={{display: 'flex', alignpersons: 'center'}}>
+                          <div style={{display: 'flex', alignItems: 'center'}}>
                           <a href={person.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .3em', height: '1.2em'}} /></a>
                           <a href={person.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .3em', height: '1.2em'}} /></a>
                           <a href={person.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
+                          <AddToCadence />
                         </div>
                         </div>
     

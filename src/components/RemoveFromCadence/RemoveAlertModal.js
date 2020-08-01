@@ -6,7 +6,7 @@ import styled from 'styled-components'
             <ModalBackground>
                 <Modal>
                     <div style={{fontSize: '2.2em', borderBottom: '1px solid #E5E5E5', width: '100%', padding: '3vh 0vw 2.5vh 1.5vw', textAlign: 'left'}}><span>Remove from Cadence</span></div>
-        <div style={{display: 'flex', alignItems: 'center', height: '55%', fontSize: '1.5em', overflowWrap: 'break-word', width: '60%', margin: '0 auto'}}><div>Are you sure you want to remove {firstName} from <b>{cadenceName}</b>?</div></div>
+                    <div style={{display: 'flex', alignItems: 'center', height: '55%', fontSize: '1.5em', overflowWrap: 'break-word', width: '60%', margin: '0 auto'}}><div>Are you sure you want to remove {firstName} from <b>{cadenceName}</b>?</div></div>
                         <div style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center', height: '15%', width: '100%', borderTop: '1px solid #E5E5E5', paddingTop: '1vh'}}>
                             <ModalButton style={{backgroundColor: '#E5E5E5', color: '4F5359', marginRight: '1.0vw'}} onClick={() => showWarningModal()}>Cancel</ModalButton>
                             <ModalButton style={{backgroundColor: '#86C6E5', color: 'white', marginRight: '1.4vw'}} onClick={() => removeFromCadence()}>Remove from Cadence</ModalButton>

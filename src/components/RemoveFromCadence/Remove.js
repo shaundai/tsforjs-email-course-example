@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import RemoveAlertModal from './RemoveAlertModal'
-import SalesLoft from './util/salesloftApi'
+import SalesLoft from '../util/salesloftApi'
 
 
 const Remove = ({personId, cadenceId, getCadenceList, cadenceName, firstName}) => {
