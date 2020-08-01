@@ -37,6 +37,10 @@ const SalesLoft = {
 
         getCadenceMembershipByPersonIdAndCadenceId(PersonId, CadenceId){
                 return axios.get(`http://localhost:3001/api/cadence/membership?personid=${PersonId}&cadenceid=${CadenceId}`)
+        },
+
+        getAllCadencesByPersonGuid(PersonGuid, TeamCadence){
+                return axios.get(`http://localhost:3001/api/cadences/all?ownerguid=${PersonGuid}&teamcadence=${TeamCadence}`)
         }
 
 }
