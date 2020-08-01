@@ -18,7 +18,7 @@ const AccountList = ({tier, accounts, showPeopleList}) => {
                 <ListAccount key={item.id}>
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                       <div style={{display: 'flex', flexDirection: 'column'}}>
-                        <div style={{fontSize: '.8em'}} onClick={() => showPeopleList(item.id)}><b>{item.name}</b></div>
+                        <div style={{fontSize: '.8em', cursor: 'pointer'}} onClick={() => showPeopleList(item.id)}><b>{item.name}</b></div>
                         <div style={{fontSize: '.7em'}}>Last Contacted: {utilFunctions.parsedDate(item.last_contacted_at)} ago</div>
                       </div>
                       <div style={{display: 'flex', alignItems: 'center'}}>

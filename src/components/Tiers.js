@@ -40,7 +40,7 @@ const Tiers = ({list}) => {
         <div> 
             {peopleAtAccountActive ?
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-              <div style={{color: '#3C9CD2', width: '97%', textAlign: 'right', fontSize: '.8em'}} onClick={() => setPeopleAtAccountActive(false)}>go back to Dashboard</div>
+              <div style={{color: '#3C9CD2', width: '97%', textAlign: 'right', fontSize: '.8em', cursor: 'pointer'}} onClick={() => setPeopleAtAccountActive(false)}>go back to Dashboard</div>
               <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', height: '70vh'}}>
                 <AccountPage account={accountInfo}/>
                 <PeopleAtAccount people={peopleList} />

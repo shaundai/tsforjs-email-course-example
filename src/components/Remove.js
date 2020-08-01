@@ -24,7 +24,7 @@ const Remove = ({personId, cadenceId, getCadenceList, cadenceName, firstName}) =
     }
 
         return (
-            <span style={{color: '#3C9CD2'}} onClick={() => showWarningModal()}>
+            <span style={{color: '#3C9CD2', cursor: 'pointer'}} onClick={() => showWarningModal()}>
                 remove {isModalOpen ? <RemoveAlertModal removeFromCadence={removeFromCadence} showWarningModal={showWarningModal} cadenceId={cadenceId} cadenceName={cadenceName} firstName={firstName}/> : null}
             </span>
         )

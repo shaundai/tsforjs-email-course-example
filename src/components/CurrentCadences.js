@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import SalesLoft from './util/salesloftApi'
 
 import CadenceList from './CadenceList'
+import NumberOfCadences from './NumberOfCadences'
 
 const CurrentCadences = ({personId, firstName}) => {
 
-    
     const [cadenceInfo, setCadenceInfo] = useState([])
     const [showCadenceList, setShowCadenceList] = useState(false)
 
@@ -26,7 +26,7 @@ const CurrentCadences = ({personId, firstName}) => {
 
         return (
             <div>
-                <div style={{fontSize: '.7em', color: '#3C9CD2'}} onClick={() => getCadenceList(personId)}>{showCadenceList ? `hide ${firstName}'s cadences` : `show ${firstName}'s cadences`}</div>
+                <div style={{fontSize: '.7em', color: '#3C9CD2', cursor: 'pointer'}} onClick={() => getCadenceList(personId)}>{showCadenceList ? `hide ${firstName}'s cadences` : <NumberOfCadences firstName={firstName} personId={personId}/> }</div>
                 {showCadenceList ?
                 <CadenceList cadenceInfo={cadenceInfo} personId={personId} getCadenceList={getCadenceList} firstName={firstName} /> : null}
             </div>
