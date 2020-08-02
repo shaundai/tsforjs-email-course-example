@@ -8,7 +8,11 @@ import CadenceList from './CadenceList'
             <ModalBackground>
                 <Modal>
                     <ModalHeader><span>Add People to Cadence</span></ModalHeader>
-                    <SearchBarContainer>Search My Cadences</SearchBarContainer>
+                    <SearchBarContainer>
+                        <SearchBar>
+                            <span style={{paddingLeft: '3vw'}}>Search My Cadences</span>
+                        </SearchBar>
+                        </SearchBarContainer>
                     <ModalMiddleText>
                         <CadenceList cadenceList={cadenceList} />
                     </ModalMiddleText>
@@ -73,13 +77,22 @@ const Modal = styled.div`
 
   const SearchBarContainer = styled.div`
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     height: 10%;
     width: 100%;
     border-bottom: 1px solid #E5E5E5;
-    padding-top: 1vh;
+    font-size: .8em;
   `
+
+  const SearchBar = styled.div`
+    display: flex;
+    align-items: center;
+    height: 60%;
+    width: 85%;
+    border: 1px solid #E5E5E5;
+    border-radius: .2em;
+    margin: 0 auto;
+`
 
   const ModalButtonContainer = styled.div`
     display: flex;
