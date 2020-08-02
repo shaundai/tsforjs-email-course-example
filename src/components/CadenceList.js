@@ -2,8 +2,6 @@ import React from 'react'
 import Remove from './RemoveFromCadence/Remove'
 
 const CadenceList = ({cadenceInfo, personId, getCadenceList, firstName}) => {
-
-    console.log(cadenceInfo)
         return (
             <ul style={{listStyleType: 'none', paddingLeft: '3vw'}}>
                     {cadenceInfo[0] ? cadenceInfo.map(item => {

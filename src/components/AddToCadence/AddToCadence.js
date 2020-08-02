@@ -25,7 +25,7 @@ const AddToCadence = () => {
         return (
             <div>
                 <div style={{cursor: 'pointer', color: 'blue'}} onClick={() => showAddToCadenceModal()}>Add to Cadence</div>
-                {isModalOpen ? <AddToCadenceModal showAddToCadenceModal={showAddToCadenceModal} /> : null}
+                {isModalOpen ? <AddToCadenceModal showAddToCadenceModal={showAddToCadenceModal} cadenceList={cadenceList} /> : null}
             </div>
         )
 }

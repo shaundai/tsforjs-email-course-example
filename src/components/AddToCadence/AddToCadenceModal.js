@@ -1,13 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
- const AddToCadenceModal = ({showAddToCadenceModal}) => {
+import CadenceList from './CadenceList'
+
+ const AddToCadenceModal = ({showAddToCadenceModal, cadenceList}) => {
         return (
             <ModalBackground>
                 <Modal>
                     <ModalHeader><span>Add People to Cadence</span></ModalHeader>
                     <SearchBarContainer>Search My Cadences</SearchBarContainer>
-                    <ModalMiddleText><div>Render Cadence List Here</div></ModalMiddleText>
+                    <ModalMiddleText>
+                        <CadenceList cadenceList={cadenceList} />
+                    </ModalMiddleText>
                         <ModalButtonContainer>
                             <ModalButton style={{backgroundColor: '#E5E5E5', color: '4F5359', marginRight: '1.0vw'}} onClick={() => showAddToCadenceModal()}>Cancel</ModalButton>
                             <ModalButton style={{backgroundColor: '#86C6E5', color: 'white', marginRight: '1.4vw'}} onClick={() => null}>Add to Cadence</ModalButton>
@@ -45,7 +49,7 @@ const ModalMiddleText = styled.div`
     height: 65%;
     font-size: .8em;
     overflow-wrap: break-word;
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
 `
 const Modal = styled.div`
