@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import search from '../../images/search.png'
 
 import CadenceList from './CadenceList'
 
@@ -10,7 +11,7 @@ import CadenceList from './CadenceList'
                     <ModalHeader><span>Add People to Cadence</span></ModalHeader>
                     <SearchBarContainer>
                         <SearchBar>
-                            <span style={{paddingLeft: '3vw'}}>Search My Cadences</span>
+                            <img src={search} alt="search icon" style={{height: '60%', paddingLeft: '2vw'}}/><div style={{paddingLeft: '.6vw'}}>Search My Cadences</div>
                         </SearchBar>
                         </SearchBarContainer>
                     <ModalMiddleText>
