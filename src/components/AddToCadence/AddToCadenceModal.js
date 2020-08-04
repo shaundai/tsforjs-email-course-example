@@ -21,7 +21,7 @@ import CadenceList from './CadenceList'
                         <CadenceList cadenceList={cadenceList} searchText={searchText} />
                     </ModalMiddleText>
                         <ModalButtonContainer>
-                            <ModalButton style={{backgroundColor: '#E5E5E5', color: '4F5359', marginRight: '1.0vw'}} onClick={() => showAddToCadenceModal()}>Cancel</ModalButton>
+                            <ModalButton style={{backgroundColor: '#E5E5E5', color: '#4F5359', marginRight: '1.0vw'}} onClick={() => showAddToCadenceModal()}>Cancel</ModalButton>
                             <ModalButton style={{backgroundColor: '#86C6E5', color: 'white', marginRight: '1.4vw'}} onClick={() => null}>Add to Cadence</ModalButton>
                         </ModalButtonContainer>
                 </Modal>
