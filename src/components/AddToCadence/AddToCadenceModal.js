@@ -13,11 +13,12 @@ import CadenceList from './CadenceList'
                     <ModalHeader><span>Add People to Cadence</span></ModalHeader>
                     <SearchBarContainer>
                         <SearchBar>
-                            <img src={search} alt="search icon" style={{height: '60%', paddingLeft: '2vw'}}/><div style={{paddingLeft: '.6vw'}}>Search My Cadences</div>
+                            <img src={search} alt="search icon" style={{height: '1.4em', paddingLeft: '1.3vw', position: 'absolute'}}/>
+                            <input style={{paddingLeft: '2.8em', height: '100%', width: '100%', fontFamily: 'Montserrat', fontSize: '1.1em'}} type="text" value={searchText} onChange={e => {setSearchText(e.target.value)}} placeholder="Search My Cadences" />
                         </SearchBar>
                         </SearchBarContainer>
                     <ModalMiddleText>
-                        <CadenceList cadenceList={cadenceList} />
+                        <CadenceList cadenceList={cadenceList} searchText={searchText} />
                     </ModalMiddleText>
                         <ModalButtonContainer>
                             <ModalButton style={{backgroundColor: '#E5E5E5', color: '4F5359', marginRight: '1.0vw'}} onClick={() => showAddToCadenceModal()}>Cancel</ModalButton>
