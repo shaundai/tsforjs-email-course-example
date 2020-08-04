@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import search from '../../images/search.png'
 
 import CadenceList from './CadenceList'
 
  const AddToCadenceModal = ({showAddToCadenceModal, cadenceList}) => {
+
+    const [searchText, setSearchText] = useState('')
         return (
             <ModalBackground>
                 <Modal>
