@@ -15,7 +15,7 @@ const AllCadenceList = ({cadenceList, searchText}) => {
                         </ListCadence>
                 ))
                 : cadenceList.map(cadence => (
-                    <ListCadence key={cadence.id}>
+                    <ListCadence key={cadence.id} className='hoverCadence'>
                         <div style={{paddingLeft: '3vw'}}>{cadence.name}</div>
                         <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}}>Show Steps</div>
                     </ListCadence>
