@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import search from '../../images/search.png'
 
-import CadenceList from './CadenceList'
+import AllCadenceList from './AllCadenceList'
 
  const AddToCadenceModal = ({showAddToCadenceModal, cadenceList}) => {
 
@@ -14,11 +14,11 @@ import CadenceList from './CadenceList'
                     <SearchBarContainer>
                         <SearchBar>
                             <img src={search} alt="search icon" style={{height: '1.4em', paddingLeft: '1.3vw', position: 'absolute'}}/>
-                            <input style={{paddingLeft: '2.8em', height: '100%', width: '100%', fontFamily: 'Montserrat', fontSize: '1.1em'}} type="text" value={searchText} onChange={e => {setSearchText(e.target.value)}} placeholder="Search My Cadences" />
+                            <input style={{paddingLeft: '2.8em', height: '100%', width: '100%', fontFamily: 'Montserrat', fontSize: '1.1em', border: '1px solid #E5E5E5', borderRadius: '.3em'}} type="text" value={searchText} onChange={e => {setSearchText(e.target.value)}} placeholder="Search My Cadences" />
                         </SearchBar>
                         </SearchBarContainer>
                     <ModalMiddleText>
-                        <CadenceList cadenceList={cadenceList} searchText={searchText} />
+                        <AllCadenceList cadenceList={cadenceList} searchText={searchText} />
                     </ModalMiddleText>
                         <ModalButtonContainer>
                             <ModalButton style={{backgroundColor: '#E5E5E5', color: '#4F5359', marginRight: '1.0vw'}} onClick={() => showAddToCadenceModal()}>Cancel</ModalButton>
@@ -93,8 +93,6 @@ const Modal = styled.div`
     align-items: center;
     height: 60%;
     width: 85%;
-    border: 1px solid #E5E5E5;
-    border-radius: .2em;
     margin: 0 auto;
 `
 

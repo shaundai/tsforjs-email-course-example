@@ -2,11 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-const CadenceList = ({cadenceList}) => {
-    console.log(cadenceList)
+const AllCadenceList = ({cadenceList, searchText}) => {
+    const searchList = cadenceList.filter(cadence => (
+            cadence.name.toLowerCase().includes(searchText.toLowerCase())))
+
         return (
             <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '100%', overflow: 'scroll', width: '100%'}}>
-                {cadenceList.map(cadence => (
+                {searchText ? searchList.map(cadence => (
+                        <ListCadence key={cadence.id}>
+                            <div style={{paddingLeft: '3vw'}}>{cadence.name}</div>
+                            <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}}>Show Steps</div>
+                        </ListCadence>
+                ))
+                : cadenceList.map(cadence => (
                     <ListCadence key={cadence.id}>
                         <div style={{paddingLeft: '3vw'}}>{cadence.name}</div>
                         <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}}>Show Steps</div>
@@ -17,7 +25,7 @@ const CadenceList = ({cadenceList}) => {
         )
 }
 
-export default CadenceList
+export default AllCadenceList
 
 const ListCadence = styled.li`
     display: flex;
