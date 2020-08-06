@@ -31,7 +31,7 @@ import SalesLoft from '../util/salesloftApi'
                         </SearchBar>
                         </SearchBarContainer>
                     <ModalMiddleText>
-                        <AllCadenceList cadenceList={cadenceList} searchText={searchText} setSelectedCadenceId={setSelectedCadenceId} />
+                        <AllCadenceList cadenceList={cadenceList} searchText={searchText} selectedCadenceId={selectedCadenceId} setSelectedCadenceId={setSelectedCadenceId} />
                     </ModalMiddleText>
                         <ModalButtonContainer>
                             <ModalButton style={{backgroundColor: '#E5E5E5', color: '#4F5359', marginRight: '1.0vw'}} onClick={() => showAddToCadenceModal()}>Cancel</ModalButton>

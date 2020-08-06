@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-const AllCadenceList = ({cadenceList, searchText, setSelectedCadenceId}) => {
+const AllCadenceList = ({cadenceList, searchText, selectedCadenceId, setSelectedCadenceId}) => {
     const searchList = cadenceList.filter(cadence => (
             cadence.name.toLowerCase().includes(searchText.toLowerCase())))
 
@@ -16,6 +16,7 @@ const AllCadenceList = ({cadenceList, searchText, setSelectedCadenceId}) => {
                 ))
                 : cadenceList.map(cadence => (
                     <ListCadence key={cadence.id} className='hoverCadence' onClick={() => setSelectedCadenceId(cadence.id)}>
+                        {cadence.id === selectedCadenceId ? <span style={{backgroundColor: '#86C6E5', paddingRight: '.5em', height: 'calc(5.6vh + 1em)', margin: '0 0'}}></span> : null}
                         <div style={{paddingLeft: '3vw'}}>{cadence.name}</div>
                         <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}}>Show Steps</div>
                     </ListCadence>
