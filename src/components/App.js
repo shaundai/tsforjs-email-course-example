@@ -11,13 +11,13 @@ import AppHeader from './AppHeader'
 import Tiers from './Tiers'
 
 function App() {
-  const [userInfo, setUserInfo] = useState({id: '', firstName: '', lastName: ''})
+  const [userInfo, setUserInfo] = useState({id: '', firstName: '', guid: ''})
   const [allAccountInfo, setAllAccountInfo] = useState([])
 
  useAsync(async () => {
     try {
-      const { id, first_name: firstName, last_name: lastName } = (await SalesLoft.getUserInfo()).data.data
-      setUserInfo({id: id, firstName: firstName, lastName: lastName})
+      const { id, first_name: firstName, guid } = (await SalesLoft.getUserInfo()).data.data
+      setUserInfo({id: id, firstName: firstName, guid: guid})
       const allInfo = (await SalesLoft.getAllAccountInfo(id)).data.data
       setAllAccountInfo(allInfo)
     }
@@ -35,7 +35,7 @@ function App() {
         </Welcome>
         <Welcome>How will you hit your quota this quarter?</Welcome>
         </div>
-        <Tiers list={allAccountInfo}/>
+        <Tiers list={allAccountInfo} userInfo={userInfo} />
     </div>
   );
 }

@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import AddToCadenceModal from './AddToCadenceModal'
 import SalesLoft from '../util/salesloftApi'
 
-const AddToCadence = () => {
+const AddToCadence = ({userInfo}) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [cadenceList, setCadenceList] = useState([])
 
     const showAddToCadenceModal = async () => {
         try {
-            const allCadencesById = (await SalesLoft.getAllCadencesByPersonGuid(false, `f25327d5-b0dc-4b25-a3a2-67570ce43bc7`)).data.data
+            const allCadencesById = (await SalesLoft.getAllCadencesByPersonGuid(false, userInfo.guid)).data.data
             const justCadenceIds = allCadencesById.map((cadence) => {
                 return cadence.id
             })

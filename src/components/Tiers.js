@@ -7,7 +7,7 @@ import PeopleAtAccount from './PeopleAtAccount'
 //api
 import SalesLoft from './util/salesloftApi'
 
-const Tiers = ({list}) => {
+const Tiers = ({list, userInfo}) => {
 
   const [peopleAtAccountActive, setPeopleAtAccountActive] = useState(false)
   const [peopleList, setPeopleList] = useState([])
@@ -43,7 +43,7 @@ const Tiers = ({list}) => {
               <div style={{color: '#3C9CD2', width: '97%', textAlign: 'right', fontSize: '.8em', cursor: 'pointer'}} onClick={() => setPeopleAtAccountActive(false)}>go back to Dashboard</div>
               <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', height: '70vh'}}>
                 <AccountPage account={accountInfo}/>
-                <PeopleAtAccount people={peopleList} />
+                <PeopleAtAccount people={peopleList} userInfo={userInfo}/>
               </div>
             </div>
             : 

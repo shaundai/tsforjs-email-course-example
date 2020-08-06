@@ -10,7 +10,7 @@ import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
-const PeopleAtAccount = ({people}) => {
+const PeopleAtAccount = ({people, userInfo}) => {
 
             return (
                 <div style={{width: '50vw', margin: 0, padding: 0, border: '1px solid rgb(229, 229, 229)', }}>
@@ -29,7 +29,7 @@ const PeopleAtAccount = ({people}) => {
                           <a href={person.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .3em', height: '1.2em'}} /></a>
                           <a href={person.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .3em', height: '1.2em'}} /></a>
                           <a href={person.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
-                          <AddToCadence />
+                          <AddToCadence userInfo={userInfo}/>
                         </div>
                         </div>
     

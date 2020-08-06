@@ -3,10 +3,13 @@ import styled from 'styled-components'
 import search from '../../images/search.png'
 
 import AllCadenceList from './AllCadenceList'
+import SalesLoft from '../util/salesloftApi'
 
  const AddToCadenceModal = ({showAddToCadenceModal, cadenceList}) => {
 
     const [searchText, setSearchText] = useState('')
+    const [selectedCadenceId, setSelectedCadenceId] = useState('')
+
         return (
             <ModalBackground>
                 <Modal>
@@ -18,7 +21,7 @@ import AllCadenceList from './AllCadenceList'
                         </SearchBar>
                         </SearchBarContainer>
                     <ModalMiddleText>
-                        <AllCadenceList cadenceList={cadenceList} searchText={searchText} />
+                        <AllCadenceList cadenceList={cadenceList} searchText={searchText} setSelectedCadenceId={setSelectedCadenceId} />
                     </ModalMiddleText>
                         <ModalButtonContainer>
                             <ModalButton style={{backgroundColor: '#E5E5E5', color: '#4F5359', marginRight: '1.0vw'}} onClick={() => showAddToCadenceModal()}>Cancel</ModalButton>
