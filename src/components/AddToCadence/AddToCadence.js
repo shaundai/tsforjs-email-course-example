@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AddToCadenceModal from './AddToCadenceModal'
 import SalesLoft from '../util/salesloftApi'
 
-const AddToCadence = ({userInfo}) => {
+const AddToCadence = ({userInfo, personId}) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [cadenceList, setCadenceList] = useState([])
@@ -25,7 +25,7 @@ const AddToCadence = ({userInfo}) => {
         return (
             <div>
                 <div style={{cursor: 'pointer', color: 'blue'}} onClick={() => showAddToCadenceModal()}>Add to Cadence</div>
-                {isModalOpen ? <AddToCadenceModal showAddToCadenceModal={showAddToCadenceModal} cadenceList={cadenceList} /> : null}
+                {isModalOpen ? <AddToCadenceModal showAddToCadenceModal={showAddToCadenceModal} cadenceList={cadenceList} personId={personId} /> : null}
             </div>
         )
 }

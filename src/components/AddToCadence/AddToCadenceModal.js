@@ -5,10 +5,20 @@ import search from '../../images/search.png'
 import AllCadenceList from './AllCadenceList'
 import SalesLoft from '../util/salesloftApi'
 
- const AddToCadenceModal = ({showAddToCadenceModal, cadenceList}) => {
+ const AddToCadenceModal = ({showAddToCadenceModal, cadenceList, personId}) => {
 
     const [searchText, setSearchText] = useState('')
     const [selectedCadenceId, setSelectedCadenceId] = useState('')
+
+    const clickAddToCadenceButton = async () => {
+        try {
+           await SalesLoft.addPersonToCadence(personId, selectedCadenceId)
+        }
+        catch(err){
+            console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
+          }
+
+    }
 
         return (
             <ModalBackground>
@@ -25,7 +35,7 @@ import SalesLoft from '../util/salesloftApi'
                     </ModalMiddleText>
                         <ModalButtonContainer>
                             <ModalButton style={{backgroundColor: '#E5E5E5', color: '#4F5359', marginRight: '1.0vw'}} onClick={() => showAddToCadenceModal()}>Cancel</ModalButton>
-                            <ModalButton style={{backgroundColor: '#86C6E5', color: 'white', marginRight: '1.4vw'}} onClick={() => null}>Add to Cadence</ModalButton>
+                            <ModalButton style={{backgroundColor: '#86C6E5', color: 'white', marginRight: '1.4vw'}} onClick={() => clickAddToCadenceButton()}>Add to Cadence</ModalButton>
                         </ModalButtonContainer>
                 </Modal>
             </ModalBackground>

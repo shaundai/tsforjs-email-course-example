@@ -29,7 +29,7 @@ const PeopleAtAccount = ({people, userInfo}) => {
                           <a href={person.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .3em', height: '1.2em'}} /></a>
                           <a href={person.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .3em', height: '1.2em'}} /></a>
                           <a href={person.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
-                          <AddToCadence userInfo={userInfo}/>
+                          <AddToCadence userInfo={userInfo} personId={person.id}/>
                         </div>
                         </div>
     
