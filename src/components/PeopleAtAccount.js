@@ -18,7 +18,7 @@ const PeopleAtAccount = ({people, userInfo}) => {
                     {people.map(person => (
                     <ListPeople key={person.id}>
                         <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                          <div style={{display: 'flex', flexDirection: 'column'}}>
+                          <div style={{display: 'flex', flexDirection: 'column', width: '55%'}}>
                             <div style={{fontSize: '.8em'}}><b>{person.first_name} {person.last_name}</b></div>
                             {person.last_contacted_at ? <div style={{fontSize: '.7em'}}>Last Contacted: {person.last_contacted_at && utilFunctions.parsedDate(person.last_contacted_at)} ago</div> : <div style={{fontSize: '.7em'}}>Never Contacted</div>}
                             

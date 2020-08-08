@@ -24,7 +24,7 @@ const AddToCadence = ({userInfo, personId, getCadenceList}) => {
 
         return (
             <div>
-                <div style={{cursor: 'pointer', color: '#86C6E5', fontSize: '1em'}} onClick={() => showAddToCadenceModal()}>Add to Cadence</div>
+                <div style={{cursor: 'pointer', color: '#86C6E5', fontSize: '.8em', marginLeft: '2em'}} onClick={() => showAddToCadenceModal()}>+ Add to Cadence</div>
                 {isModalOpen ? <AddToCadenceModal showAddToCadenceModal={showAddToCadenceModal} cadenceList={cadenceList} personId={personId} getCadenceList={getCadenceList} /> : null}
             </div>
         )
