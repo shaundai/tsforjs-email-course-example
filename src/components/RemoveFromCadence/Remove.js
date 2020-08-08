@@ -31,6 +31,4 @@ const Remove = ({personId, cadenceId, getCadenceList, cadenceName, firstName}) =
     
 }
 
-//onClick={() => removeFromCadence(cadenceId)}
-
 export default Remove

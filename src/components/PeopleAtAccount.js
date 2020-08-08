@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import utilFunctions from './util/utilFunctions'
 import CurrentCadences from './CurrentCadences'
-import AddToCadence from './AddToCadence/AddToCadence'
 
 //images
 import linkedin from '../images/linkedin.png'
@@ -23,13 +22,12 @@ const PeopleAtAccount = ({people, userInfo}) => {
                             <div style={{fontSize: '.8em'}}><b>{person.first_name} {person.last_name}</b></div>
                             {person.last_contacted_at ? <div style={{fontSize: '.7em'}}>Last Contacted: {person.last_contacted_at && utilFunctions.parsedDate(person.last_contacted_at)} ago</div> : <div style={{fontSize: '.7em'}}>Never Contacted</div>}
                             
-                            <CurrentCadences personId={person.id} firstName={person.first_name}/>
+                            <CurrentCadences personId={person.id} firstName={person.first_name} userInfo={userInfo} />
                           </div>
                           <div style={{display: 'flex', alignItems: 'center'}}>
                           <a href={person.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .3em', height: '1.2em'}} /></a>
                           <a href={person.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .3em', height: '1.2em'}} /></a>
                           <a href={person.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
-                          <AddToCadence userInfo={userInfo} personId={person.id}/>
                         </div>
                         </div>
     
