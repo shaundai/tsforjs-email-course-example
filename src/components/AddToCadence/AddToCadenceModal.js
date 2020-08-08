@@ -5,7 +5,7 @@ import search from '../../images/search.png'
 import AllCadenceList from './AllCadenceList'
 import SalesLoft from '../util/salesloftApi'
 
- const AddToCadenceModal = ({showAddToCadenceModal, cadenceList, personId}) => {
+ const AddToCadenceModal = ({showAddToCadenceModal, cadenceList, personId, getCadenceList}) => {
 
     const [searchText, setSearchText] = useState('')
     const [selectedCadenceId, setSelectedCadenceId] = useState('')
@@ -14,6 +14,7 @@ import SalesLoft from '../util/salesloftApi'
         try {
            await SalesLoft.addPersonToCadence(personId, selectedCadenceId)
            showAddToCadenceModal()
+           getCadenceList(personId)
         }
         catch(err){
             console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
