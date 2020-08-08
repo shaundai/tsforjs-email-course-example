@@ -26,7 +26,7 @@ const CurrentCadences = ({personId, firstName, userInfo}) => {
     }
 
         return (
-            <div style={{display: 'flex', width: '100%', justifyContent: 'space-between'}}>
+            <div style={{display: 'flex', flexDirection: 'column', width: '100%', justifyContent: 'space-between', alignItems: 'flex-end', padding: '.5em', paddingLeft: 0}}>
                 <div style={{display: 'flex', flexDirection: 'column'}}>
                     <div style={{fontSize: '.7em', color: '#3C9CD2', cursor: 'pointer'}} onClick={() => getCadenceList(personId)}>{showCadenceList ? `hide ${firstName}'s cadences` : <NumberOfCadences firstName={firstName} personId={personId}/> }</div>
                     {showCadenceList ?

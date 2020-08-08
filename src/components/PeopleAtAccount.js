@@ -17,18 +17,19 @@ const PeopleAtAccount = ({people, userInfo}) => {
                     <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '60vh', overflow: 'scroll', backgroundColor: 'white'}}>
                     {people.map(person => (
                     <ListPeople key={person.id}>
-                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                          <div style={{display: 'flex', flexDirection: 'column', width: '55%'}}>
-                            <div style={{fontSize: '.8em'}}><b>{person.first_name} {person.last_name}</b></div>
+                        <div style={{display: 'flex', justifyContent: 'space-between', padding: '.5em', paddingRight: 0}}>
+                          <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
+                            <div style={{fontSize: '.8em'}}><b>{person.first_name} {person.last_name}</b>, <span style={{fontSize: '.8em'}}>{person.title}</span></div>
                             {person.last_contacted_at ? <div style={{fontSize: '.7em'}}>Last Contacted: {person.last_contacted_at && utilFunctions.parsedDate(person.last_contacted_at)} ago</div> : <div style={{fontSize: '.7em'}}>Never Contacted</div>}
-                            
-                            <CurrentCadences personId={person.id} firstName={person.first_name} userInfo={userInfo} />
+
+                            <div style={{display: 'flex', alignItems: 'center', paddingRight: '.5em'}}>
+                              <a href={person.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .3em', height: '1.2em'}} /></a>
+                              <a href={person.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .3em', height: '1.2em'}} /></a>
+                              <a href={person.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
+                            </div>
                           </div>
-                          <div style={{display: 'flex', alignItems: 'center'}}>
-                          <a href={person.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .3em', height: '1.2em'}} /></a>
-                          <a href={person.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .3em', height: '1.2em'}} /></a>
-                          <a href={person.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
-                        </div>
+                          Seniority
+                          <CurrentCadences personId={person.id} firstName={person.first_name} userInfo={userInfo} />
                         </div>
     
                     </ListPeople>
@@ -49,5 +50,5 @@ const TierTitle = styled.div`
 `
 const ListPeople = styled.li`
   border-bottom: 1px solid rgba(0,0,0,.1);
-  padding: .5em;
+  width: 100%;
 `
