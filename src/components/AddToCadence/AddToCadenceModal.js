@@ -13,6 +13,7 @@ import SalesLoft from '../util/salesloftApi'
     const clickAddToCadenceButton = async () => {
         try {
            await SalesLoft.addPersonToCadence(personId, selectedCadenceId)
+           showAddToCadenceModal()
         }
         catch(err){
             console.log(`My error code is ${err.status}.  I errored out bc ${err}`)

@@ -4,7 +4,8 @@ import styled from 'styled-components'
 
 const AllCadenceList = ({cadenceList, searchText, selectedCadenceId, setSelectedCadenceId}) => {
     const searchList = cadenceList.filter(cadence => (
-            cadence.name.toLowerCase().includes(searchText.toLowerCase())))
+            cadence.name.toLowerCase().includes(searchText.toLowerCase())
+            ))
 
         return (
             <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '100%', overflow: 'scroll', width: '100%'}}>
