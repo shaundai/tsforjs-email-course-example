@@ -28,8 +28,10 @@ const PeopleAtAccount = ({people, userInfo}) => {
                               <a href={person.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
                             </div>
                           </div>
-                          Seniority
-                          <CurrentCadences personId={person.id} firstName={person.first_name} userInfo={userInfo} />
+                          <div style={{display: 'flex', flexDirection: 'column', padding: '.5em', paddingLeft: 0}}>
+                            <div style={{width: '100%', textAlign: 'right'}}> Seniority: {person.job_seniority}</div>
+                            <CurrentCadences personId={person.id} firstName={person.first_name} userInfo={userInfo} />
+                          </div>
                         </div>
     
                     </ListPeople>
