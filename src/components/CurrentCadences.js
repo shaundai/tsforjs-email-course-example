@@ -26,10 +26,12 @@ const CurrentCadences = ({personId, firstName, userInfo}) => {
     }
 
         return (
-            <div>
-                <div style={{fontSize: '.7em', color: '#3C9CD2', cursor: 'pointer'}} onClick={() => getCadenceList(personId)}>{showCadenceList ? `hide ${firstName}'s cadences` : <NumberOfCadences firstName={firstName} personId={personId}/> }</div>
-                {showCadenceList ?
-                <CadenceList cadenceInfo={cadenceInfo} personId={personId} getCadenceList={getCadenceList} firstName={firstName} /> : null}
+            <div style={{display: 'flex'}}>
+                <div style={{display: 'flex', flexDirection: 'column'}}>
+                    <div style={{fontSize: '.7em', color: '#3C9CD2', cursor: 'pointer'}} onClick={() => getCadenceList(personId)}>{showCadenceList ? `hide ${firstName}'s cadences` : <NumberOfCadences firstName={firstName} personId={personId}/> }</div>
+                    {showCadenceList ?
+                    <CadenceList cadenceInfo={cadenceInfo} personId={personId} getCadenceList={getCadenceList} firstName={firstName} /> : null}
+                </div>
                 <AddToCadence userInfo={userInfo} personId={personId} getCadenceList={getCadenceList} />
             </div>
         )
