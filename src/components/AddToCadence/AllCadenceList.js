@@ -17,10 +17,10 @@ const AllCadenceList = ({cadenceList, searchText, selectedCadenceId, setSelected
                 : cadenceList.map(cadence => (
                     <ListCadence key={cadence.id} className='hoverCadence' onClick={() => setSelectedCadenceId(cadence.id)}>
                         {cadence.id === selectedCadenceId ? <span style={{backgroundColor: '#86C6E5', paddingRight: '.5em'}}/> : <span style={{paddingRight: '.5em'}}/>}
-                        <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%', padding: '2.8vh 0vw'}}>
-                        <div style={{paddingLeft: 'calc(3vw - .5em)'}}>{cadence.name}</div>
-                        <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}}>Show Steps</div>
-                        </div>
+                        <CadenceTextContainer>
+                            <div style={{paddingLeft: 'calc(3vw - .5em)'}}>{cadence.name}</div>
+                            <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}}>Show Steps</div>
+                        </CadenceTextContainer>
                     </ListCadence>
                 ))
                 }
@@ -33,8 +33,15 @@ export default AllCadenceList
 const ListCadence = styled.li`
     display: flex;
     border-bottom: 1px solid rgba(0,0,0,.1);
-    
     width: 100%;
     font-size: 1em;
     font-weight: 600;
+`
+
+const CadenceTextContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    padding: 2.8vh 0vw;
 `
