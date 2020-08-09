@@ -24,13 +24,13 @@ const utilFunctions = {
 
     findReadableSeniority(seniority) {
         switch(seniority){
-            case executive:
+            case 'executive':
                 return 'Executive';
-            case vice_president:
+            case 'vice_president':
                 return 'Vice President';
-            case director:
+            case 'director':
                 return 'Director';
-            case individual_contributor:
+            case 'individual_contributor':
                 return 'Individual Contributor';
             default:
                 return 'Seniority Unknown';
