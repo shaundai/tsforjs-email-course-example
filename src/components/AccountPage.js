@@ -10,14 +10,17 @@ import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
-const AccountPage = ({account}) =>  {
+const AccountPage = ({account, userInfo}) =>  {
 
     const [lastContactedName, setLastContactedName] = useState('')
+    const [lastContactedBy, setLastContactedBy] = useState('')
 
     useAsync(async () => {
         try {
             const person = (await SalesLoft.getContactInfo(account.last_contacted_person.id)).data.data
             setLastContactedName(person.display_name)
+            const userWhoLastContactedAccount = (await SalesLoft.getAnyUserInfo(account.last_contacted_by.id)).data.data.name
+            setLastContactedBy(userWhoLastContactedAccount)
         }
         catch (err) {
             console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
@@ -49,7 +52,7 @@ const AccountPage = ({account}) =>  {
                     <div>#: {account.counts.people/2}</div>
                     <div style={{marginLeft: '5vw'}}>%: {account.counts.people/2}</div>
                 </div>
-                <div style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Last Contact:</b> {account.last_contacted_type} to {lastContactedName} {account.last_contacted_at && utilFunctions.parsedDate(account.last_contacted_at)} ago by {account.last_contacted_by.id}</div>
+                <div style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Last Contact:</b> {account.last_contacted_type} to {lastContactedName} {account.last_contacted_at && utilFunctions.parsedDate(account.last_contacted_at)} ago by {lastContactedBy}</div>
             </div>
 
             </div>

@@ -2,8 +2,12 @@ const axios = require('axios');
 
 const SalesLoft = {
         
-        getUserInfo(){
+        getCurrentUserInfo(){
                 return axios.get(`http://localhost:3001/api/user`)
+        },
+
+        getAnyUserInfo(userId){
+                return axios.get(`http://localhost:3001/api/team/id/${userId}`)
         },
 
         getAllAccountInfo(userId){

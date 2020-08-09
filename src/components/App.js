@@ -16,7 +16,7 @@ function App() {
 
  useAsync(async () => {
     try {
-      const { id, first_name: firstName, guid } = (await SalesLoft.getUserInfo()).data.data
+      const { id, first_name: firstName, guid } = (await SalesLoft.getCurrentUserInfo()).data.data
       setUserInfo({id: id, firstName: firstName, guid: guid})
       const allInfo = (await SalesLoft.getAllAccountInfo(id)).data.data
       setAllAccountInfo(allInfo)
