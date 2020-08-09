@@ -20,6 +20,21 @@ const utilFunctions = {
             default:
                 return 'No Tier';
         }
+    },
+
+    findReadableSeniority(seniority) {
+        switch(seniority){
+            case executive:
+                return 'Executive';
+            case vice_president:
+                return 'Vice President';
+            case director:
+                return 'Director';
+            case individual_contributor:
+                return 'Individual Contributor';
+            default:
+                return 'Seniority Unknown';
+        }
     }
 
 }

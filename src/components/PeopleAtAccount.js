@@ -18,9 +18,10 @@ const PeopleAtAccount = ({people, userInfo}) => {
                     {people.map(person => (
                     <ListPeople key={person.id}>
                         <div style={{display: 'flex', justifyContent: 'space-between', padding: '.5em', paddingRight: 0}}>
-                          <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
-                            <div style={{fontSize: '.8em'}}><b>{person.first_name} {person.last_name}</b>, <span style={{fontSize: '.8em'}}>{person.title}</span></div>
-                            {person.last_contacted_at ? <div style={{fontSize: '.7em'}}>Last Contacted: {person.last_contacted_at && utilFunctions.parsedDate(person.last_contacted_at)} ago</div> : <div style={{fontSize: '.7em'}}>Never Contacted</div>}
+                          <div style={{display: 'flex', flexDirection: 'column', width: '50%'}}>
+                            <div style={{fontSize: '.8em'}}><b>{person.first_name} {person.last_name}</b>,</div>
+                            <div style={{fontSize: '.6em'}}>{person.title}</div>
+                            {person.last_contacted_at ? <div style={{fontSize: '.7em', marginTop: '1vh'}}>Last Contacted: {person.last_contacted_at && utilFunctions.parsedDate(person.last_contacted_at)} ago</div> : <div style={{fontSize: '.7em'}}>Never Contacted</div>}
 
                             <div style={{display: 'flex', alignItems: 'center', paddingRight: '.5em'}}>
                               <a href={person.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .3em', height: '1.2em'}} /></a>
@@ -28,7 +29,7 @@ const PeopleAtAccount = ({people, userInfo}) => {
                               <a href={person.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
                             </div>
                           </div>
-                          <div style={{display: 'flex', flexDirection: 'column', padding: '.5em', paddingLeft: 0}}>
+                          <div style={{display: 'flex', flexDirection: 'column', padding: '.5em', paddingLeft: 0, width: '50%'}}>
                             <div style={{width: '100%', textAlign: 'right'}}> Seniority: {person.job_seniority}</div>
                             <CurrentCadences personId={person.id} firstName={person.first_name} userInfo={userInfo} />
                           </div>
