@@ -10,7 +10,7 @@ import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
-const AccountPage = ({account, userInfo}) =>  {
+const AccountPage = ({account, people}) =>  {
 
     const [lastContactedName, setLastContactedName] = useState('')
     const [lastContactedBy, setLastContactedBy] = useState('')
@@ -46,7 +46,7 @@ const AccountPage = ({account, userInfo}) =>  {
             <div style={{marginTop: '3vh', display: 'flex', flexDirection: 'column', alignItems: 'center', border: '1px solid rgb(229, 229, 229)', paddingBottom: '1em', backgroundColor: 'white'}}>
                 <Header>Stats</Header>
                 <div style={{fontSize: '.8em', marginBottom: '.3em', paddingTop: '.7em'}}><b>Company Size:</b> {account.size ? account.size : 'unknown'}</div>
-                <div style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Contacts in SalesLoft:</b> {account.counts.people}</div>
+                <div style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Contacts in SalesLoft:</b> {people.length}</div>
                 <div style={{textAlign: 'center', fontSize: '.8em', marginBottom: '.3em'}}>in Cadences</div> 
                 <div style={{display: 'flex', fontSize: '.8em', marginBottom: '.3em'}}>
                     <div>#: {account.counts.people/2}</div>
