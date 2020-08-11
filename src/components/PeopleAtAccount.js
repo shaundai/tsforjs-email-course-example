@@ -9,7 +9,7 @@ import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
-const PeopleAtAccount = ({people, userInfo}) => {
+const PeopleAtAccount = ({people, userInfo, setPeopleInCadences}) => {
 
             return (
                 <div style={{width: '50vw', margin: 0, padding: 0, border: '1px solid rgb(229, 229, 229)', }}>
