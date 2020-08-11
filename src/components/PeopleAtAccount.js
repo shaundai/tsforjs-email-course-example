@@ -11,6 +11,13 @@ import website from '../images/websiteicon.png'
 
 const PeopleAtAccount = ({people, userInfo, setPeopleInCadences}) => {
 
+  //fix this up
+  const findPeopleInCadences = () => {
+    people.filter(person => {
+      return person.state.isCurrentlyOnCadence = true
+    })
+  }
+
             return (
                 <div style={{width: '50vw', margin: 0, padding: 0, border: '1px solid rgb(229, 229, 229)', }}>
                     <TierTitle>Contacts ({people.length})</TierTitle>

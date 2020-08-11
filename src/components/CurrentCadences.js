@@ -9,7 +9,7 @@ const CurrentCadences = ({personId, firstName, userInfo}) => {
 
     const [cadenceInfo, setCadenceInfo] = useState([])
     const [showCadenceList, setShowCadenceList] = useState(false)
-    const [isCurrentlyOnCadence, setIsCurrentlyOnCadence] = useState({personId: 'blocka', onCadence: false})
+    const [isCurrentlyOnCadence, setIsCurrentlyOnCadence] = useState()
 
     const getCadenceList = async (personid) => {
         try {
