@@ -12,7 +12,7 @@ const Tiers = ({list, userInfo}) => {
   const [peopleAtAccountActive, setPeopleAtAccountActive] = useState(false)
   const [peopleList, setPeopleList] = useState([])
   const [accountInfo, setAccountInfo] = useState({})
-  const [peopleInCadences, setPeopleInCadences] = useState([])
+  const [peopleInCadences, setPeopleInCadences] = useState()
 
   const TierOne = list.filter(item => {
     return item.account_tier && item.account_tier.id === 13
@@ -43,7 +43,7 @@ const Tiers = ({list, userInfo}) => {
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
               <div style={{color: '#3C9CD2', width: '97%', textAlign: 'right', fontSize: '.8em', cursor: 'pointer'}} onClick={() => setPeopleAtAccountActive(false)}>go back to Dashboard</div>
               <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', height: '70vh'}}>
-                <AccountPage account={accountInfo} people={peopleList} />
+                <AccountPage account={accountInfo} people={peopleList} peopleInCadences={peopleInCadences} />
                 <PeopleAtAccount people={peopleList} userInfo={userInfo} setPeopleInCadences={setPeopleInCadences} />
               </div>
             </div>

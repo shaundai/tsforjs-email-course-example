@@ -10,7 +10,7 @@ import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
-const AccountPage = ({account, people}) =>  {
+const AccountPage = ({account, people, peopleInCadences}) =>  {
 
     const [lastContactedName, setLastContactedName] = useState('')
     const [lastContactedBy, setLastContactedBy] = useState('')
@@ -49,7 +49,7 @@ const AccountPage = ({account, people}) =>  {
                 <div style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Contacts in SalesLoft:</b> {people.length}</div>
                 <div style={{textAlign: 'center', fontSize: '.8em', marginBottom: '.3em'}}>in Cadences</div> 
                 <div style={{display: 'flex', fontSize: '.8em', marginBottom: '.3em'}}>
-                    <div>#: {account.counts.people/2}</div>
+                    <div>#: {peopleInCadences}</div>
                     <div style={{marginLeft: '5vw'}}>%: {account.counts.people/2}</div>
                 </div>
                 <div style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Last Contact:</b> {account.last_contacted_type} to {lastContactedName} {account.last_contacted_at && utilFunctions.parsedDate(account.last_contacted_at)} ago by {lastContactedBy}</div>
