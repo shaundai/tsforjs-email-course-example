@@ -86,4 +86,5 @@ const TextContainer = styled.div`
 const SocialContainer = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 1.5vh;
 `

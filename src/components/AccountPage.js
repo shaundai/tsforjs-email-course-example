@@ -47,12 +47,20 @@ const AccountPage = ({account, people, peopleInCadences}) =>  {
                 <Header>Stats</Header>
                 <div style={{fontSize: '.8em', marginBottom: '.3em', paddingTop: '.7em'}}><b>Company Size:</b> {account.size ? account.size : 'unknown'}</div>
                 <div style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Contacts in SalesLoft:</b> {people.length}</div>
-                <div style={{textAlign: 'center', fontSize: '.8em', marginBottom: '.3em'}}>in Cadences</div> 
                 <div style={{display: 'flex', fontSize: '.8em', marginBottom: '.3em'}}>
-                    <div>#: {peopleInCadences}</div>
-                    <div style={{marginLeft: '5vw'}}>%: {account.counts.people/2}</div>
+                    <StatBlock>
+                        <div style={{fontSize: '1.3em', fontWeight: 600}}>{peopleInCadences}</div>
+                        <div style={{fontSize: '.8em'}}>Number</div>
+                        <div style={{fontSize: '.8em'}}>in Cadences</div>
+                    </StatBlock>
+                    <StatBlock style={{borderLeft: '1px solid #4F5359'}}>
+                        <div style={{fontSize: '1.3em', fontWeight: 600}}>{peopleInCadences ? Math.ceil(peopleInCadences/people.length) : 0}</div>
+                        <div style={{fontSize: '.8em'}}>Percent</div>
+                        <div style={{fontSize: '.8em'}}>in Cadences</div>
+                    </StatBlock>
                 </div>
-                <div style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Last Contact:</b> {account.last_contacted_type} to {lastContactedName} {account.last_contacted_at && utilFunctions.parsedDate(account.last_contacted_at)} ago by {lastContactedBy}</div>
+                <div style={{fontSize: '.8em', marginBottom: '.3em', textAlign: 'center'}}><b>Last Contact:</b></div>
+                <div style={{fontSize: '.8em', marginBottom: '.3em', textAlign: 'center', paddingLeft: '3vh', paddingRight: '3vh'}}>{account.last_contacted_type} to {lastContactedName} {account.last_contacted_at && utilFunctions.parsedDate(account.last_contacted_at)} ago by {lastContactedBy}</div>
             </div>
 
             </div>
@@ -90,3 +98,13 @@ const Tier = styled.div`
     text-align: right;
     color: white;
     `
+
+const StatBlock = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+`
