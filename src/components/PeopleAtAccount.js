@@ -18,7 +18,6 @@ const PeopleAtAccount = ({people, userInfo, setPeopleInCadences}) => {
       const cadencesCount = Promise.all(people.map(async (person) => (await SalesLoft.getIdsOfCadencesByPerson(person.id)).data.data.length))
       const numberInCadences = (await cadencesCount).filter(count => count > 0).length
       setPeopleInCadences(numberInCadences)
-      return numberInCadences
     }
     catch(err){
       console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
