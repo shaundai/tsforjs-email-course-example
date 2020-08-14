@@ -10,3 +10,13 @@ input:focus {
 .hoverCadence:hover {
   background-color: #f1fafe;
 }
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 4vh;
+  height: 4vh;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
