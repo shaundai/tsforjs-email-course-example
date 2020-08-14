@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const AllCadenceList = ({cadenceList, searchText, selectedCadenceId, setSelectedCadenceId}) => {
+    
     const searchList = cadenceList.filter(cadence => (
             cadence.name.toLowerCase().includes(searchText.toLowerCase())
             ))

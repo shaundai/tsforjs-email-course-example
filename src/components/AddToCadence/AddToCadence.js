@@ -6,10 +6,11 @@ const AddToCadence = ({userInfo, personId, getCadenceList}) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [cadenceList, setCadenceList] = useState([])
+    const [isTeamCadence, setIsTeamCadence] = useState(false)
 
     const showAddToCadenceModal = async () => {
         try {
-            const allCadencesById = (await SalesLoft.getAllCadencesByPersonGuid(false, userInfo.guid)).data.data
+            const allCadencesById = (await SalesLoft.getAllCadencesByPersonGuid(isTeamCadence, userInfo.guid)).data.data
             const justCadenceIds = allCadencesById.map((cadence) => {
                 return cadence.id
             })
@@ -25,7 +26,7 @@ const AddToCadence = ({userInfo, personId, getCadenceList}) => {
         return (
             <div>
                 <div style={{cursor: 'pointer', color: '#3C9CD2', fontSize: '.7em', marginLeft: '2em'}} onClick={() => showAddToCadenceModal()}>+ Add to Cadence</div>
-                {isModalOpen ? <AddToCadenceModal showAddToCadenceModal={showAddToCadenceModal} cadenceList={cadenceList} personId={personId} getCadenceList={getCadenceList} /> : null}
+                {isModalOpen ? <AddToCadenceModal showAddToCadenceModal={showAddToCadenceModal} cadenceList={cadenceList} personId={personId} getCadenceList={getCadenceList} setIsTeamCadence={setIsTeamCadence} /> : null}
             </div>
         )
 }
