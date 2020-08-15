@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { fadeIn } from 'react-animations';
 import AccountList from './AccountList'
 import AccountPage from './AccountPage'
 import PeopleAtAccount from './PeopleAtAccount'
@@ -40,15 +41,15 @@ const Tiers = ({list, userInfo}) => {
         return (
         <div> 
             {peopleAtAccountActive ?
-            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+            <PeopleAndAccount>
               <div style={{color: '#3C9CD2', width: '97%', textAlign: 'right', fontSize: '.8em', cursor: 'pointer'}} onClick={() => setPeopleAtAccountActive(false)}>go back to Dashboard</div>
               <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', height: '70vh'}}>
                 <AccountPage account={accountInfo} people={peopleList} peopleInCadences={peopleInCadences} />
                 <PeopleAtAccount people={peopleList} userInfo={userInfo} setPeopleInCadences={setPeopleInCadences} />
               </div>
-            </div>
+            </PeopleAndAccount>
             : 
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '72vh'}}>
+            <TierLists>
               <TierBlock>
                   <AccountList tier={1} accounts={TierOne} showPeopleList={getPeopleInfo} />
                 </TierBlock>
@@ -58,7 +59,7 @@ const Tiers = ({list, userInfo}) => {
               <TierBlock>
                   <AccountList tier={3} accounts={TierThree} showPeopleList={getPeopleInfo} />
               </TierBlock>
-            </div>
+            </TierLists>
             }
         </div>
         )
@@ -71,4 +72,21 @@ const TierBlock = styled.div`
   width: calc(86%/3);
   margin: 0 2em;
   border-right: 2px solid rgba(0,0,0,.1);
+`
+
+const fadeInAnimation = keyframes`${fadeIn}`;
+
+const PeopleAndAccount = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: .5s ${fadeInAnimation};
+`
+
+const TierLists = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72vh;
+  animation: .5s ${fadeInAnimation};
 `

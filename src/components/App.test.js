@@ -1,9 +1,31 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+afterEach(() => {
+  cleanup();
+  console.error.mockClear();
+})
+
+test('renders welcome page', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const headerText = getByText(/welcome/i);
+  expect(headerText).toBeInTheDocument();
 });
+
+console.error = jest.fn()
+
+test('app exists', () => {
+  render(<App />)
+  expect(console.error).not.toHaveBeenCalled()
+})
+
+const userInfo = {
+  firstName: 'Fred'
+}
+
+test('original api call happened', () => {
+  const { debug, getByTestId, getByDisplayValue } = render(<App />)
+  expect(getByTestId('welcome')).toBe('hi')
+  debug()
+})

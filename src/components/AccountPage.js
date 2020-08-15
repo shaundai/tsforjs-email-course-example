@@ -49,7 +49,7 @@ const AccountPage = ({account, people, peopleInCadences}) =>  {
                 <div style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Contacts in SalesLoft:</b> {people.length}</div>
                 <div style={{display: 'flex', fontSize: '.8em', marginBottom: '.3em'}}>
                     <StatBlock>
-                        <div style={{fontSize: '1.3em', fontWeight: 600}}>{peopleInCadences ? peopleInCadences : <div className="spinner"></div>}</div>
+                        <div style={{fontSize: '1.3em', fontWeight: 600}}>{peopleInCadences ? peopleInCadences : '...'}</div>
                         <div style={{fontSize: '.8em'}}>Number</div>
                         <div style={{fontSize: '.8em'}}>in Cadences</div>
                     </StatBlock>
