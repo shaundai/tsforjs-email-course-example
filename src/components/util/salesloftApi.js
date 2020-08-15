@@ -49,8 +49,11 @@ const SalesLoft = {
 
         getAllCadencesByPersonGuid(TeamCadence, PersonGuid){
                 return axios.get(`http://localhost:3001/api/cadences/all?teamcadence=${TeamCadence}&ownerguid%5B%5D=${PersonGuid}`)
+        },
+        
+        getStepsOnCadence(CadenceId){
+                return axios.get(`http://localhost:3001/api/cadence/steps?cadenceid=${CadenceId}`)
         }
-
 }
 
 export default SalesLoft;
