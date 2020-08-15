@@ -21,7 +21,7 @@ const NumberOfCadences = ({firstName, personId, setIsCurrentlyOnCadence}) => {
 
         return (
             <span>
-                show {firstName}'s cadences    <span style={{marginLeft: '.2vw', color: '#4F5359'}}>({numberOfCadences})</span>
+                show {firstName}'s cadences    <span style={{marginLeft: '.2vw', color: '#4F5359'}}>({numberOfCadences >= 0 ? numberOfCadences : <span><span class="one">.</span><span class="two">.</span><span class="three">.</span></span>})</span>
             </span>
         )
      }
