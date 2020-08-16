@@ -31,7 +31,7 @@ const ModalBackground = styled.div`
   `
 
 const ModalHeader = styled.div`
-    font-size: 2.2em;
+    font-size: 1.8em;
     border-bottom: 1px solid #E5E5E5;
     width: 100%;
     padding: 3vh 0vw 2.5vh 1.5vw;
@@ -42,7 +42,7 @@ const ModalMiddleText = styled.div`
     display: flex;
     align-items: center;
     height: 55%;
-    font-size: 1.5em;
+    font-size: 1.3em;
     overflow-wrap: break-word;
     width: 60%;
     margin: 0 auto;
@@ -73,6 +73,7 @@ const Modal = styled.div`
     width: 100%;
     border-top: 1px solid #E5E5E5;
     padding-top: 1vh;
+    padding-bottom: 1vh;
   `
 
   const ModalButton = styled.button`
