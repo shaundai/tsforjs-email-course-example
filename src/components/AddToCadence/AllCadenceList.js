@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import SalesLoft from '../util/salesloftApi'
 import styled from 'styled-components'
 
 const AllCadenceList = ({cadenceList, searchText, selectedCadenceId, setSelectedCadenceId}) => {
     
+    const [isShowingSteps, setIsShowingSteps] = useState(false)
+    const [cadenceSteps, setCadenceSteps] = useState([])
+
     const searchList = cadenceList.filter(cadence => (
             cadence.name.toLowerCase().includes(searchText.toLowerCase())
             ))
+
+    const showCadenceSteps = async (cadenceId) => {
+        try {
+            const steps = await (SalesLoft.getStepsOnCadence(cadenceId)).data
+            setCadenceSteps(steps)
+            setIsShowingSteps(isShowingSteps === false ? true : false)
+         }
+         catch(err){
+             console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
+           }
+    }
 
         return (
             <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '100%', overflow: 'scroll', width: '100%'}}>
@@ -20,7 +35,8 @@ const AllCadenceList = ({cadenceList, searchText, selectedCadenceId, setSelected
                         {cadence.id === selectedCadenceId ? <span style={{backgroundColor: '#86C6E5', paddingRight: '.5em'}}/> : <span style={{paddingRight: '.5em'}}/>}
                         <CadenceTextContainer>
                             <div style={{paddingLeft: 'calc(3vw - .5em)'}}>{cadence.name}</div>
-                            <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}}>Show Steps</div>
+                            <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}} onClick={() => showCadenceSteps(cadence.id)}>Show Steps</div>
+                            {isShowingSteps ? <div>steps</div> : null}
                         </CadenceTextContainer>
                     </ListCadence>
                 ))
