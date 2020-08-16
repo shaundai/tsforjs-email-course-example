@@ -1,42 +1,31 @@
-import React, { useState } from 'react'
-import SalesLoft from '../util/salesloftApi'
+import React from 'react'
 import styled from 'styled-components'
 
+
 const AllCadenceList = ({cadenceList, searchText, selectedCadenceId, setSelectedCadenceId}) => {
-    
-    const [isShowingSteps, setIsShowingSteps] = useState(false)
-    const [cadenceSteps, setCadenceSteps] = useState([])
 
     const searchList = cadenceList.filter(cadence => (
             cadence.name.toLowerCase().includes(searchText.toLowerCase())
             ))
 
-    const showCadenceSteps = async (cadenceId) => {
-        try {
-            const steps = await (SalesLoft.getStepsOnCadence(cadenceId)).data
-            setCadenceSteps(steps)
-            setIsShowingSteps(isShowingSteps === false ? true : false)
-         }
-         catch(err){
-             console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
-           }
-    }
 
         return (
             <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '100%', overflow: 'scroll', width: '100%'}}>
                 {searchText ? searchList.map(cadence => (
-                        <ListCadence key={cadence.id}>
-                            <div style={{paddingLeft: '3vw'}}>{cadence.name}</div>
+                    <ListCadence key={cadence.id} className='hoverCadence' onClick={() => setSelectedCadenceId(cadence.id)}>
+                        {cadence.id === selectedCadenceId ? <span style={{backgroundColor: '#86C6E5', paddingRight: '.5em'}}/> : <span style={{paddingRight: '.5em'}}/>}
+                        <CadenceTextContainer>
+                            <div style={{paddingLeft: 'calc(3vw - .5em)'}}>{cadence.name}</div>
                             <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}}>Show Steps</div>
-                        </ListCadence>
+                        </CadenceTextContainer>
+                    </ListCadence>
                 ))
                 : cadenceList.map(cadence => (
                     <ListCadence key={cadence.id} className='hoverCadence' onClick={() => setSelectedCadenceId(cadence.id)}>
                         {cadence.id === selectedCadenceId ? <span style={{backgroundColor: '#86C6E5', paddingRight: '.5em'}}/> : <span style={{paddingRight: '.5em'}}/>}
                         <CadenceTextContainer>
                             <div style={{paddingLeft: 'calc(3vw - .5em)'}}>{cadence.name}</div>
-                            <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}} onClick={() => showCadenceSteps(cadence.id)}>Show Steps</div>
-                            {isShowingSteps ? <div>steps</div> : null}
+                            <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}}>Show Steps</div>
                         </CadenceTextContainer>
                     </ListCadence>
                 ))
