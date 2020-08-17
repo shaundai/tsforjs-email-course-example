@@ -8,9 +8,11 @@ afterEach(() => {
 })
 
 test('renders welcome page', () => {
-  const { getByText } = render(<App />);
+  const { debug, getByText, getByTestId } = render(<App />);
   const headerText = getByText(/welcome/i);
   expect(headerText).toBeInTheDocument();
+
+  expect(getByTestId('welcome').textContent).toBe(`Welcome, !`)
 });
 
 console.error = jest.fn()
@@ -24,8 +26,3 @@ const userInfo = {
   firstName: 'Fred'
 }
 
-test('original api call happened', () => {
-  const { debug, getByTestId, getByDisplayValue } = render(<App />)
-  expect(getByTestId('welcome')).toBe('hi')
-  debug()
-})
