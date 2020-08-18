@@ -24,7 +24,7 @@ const AddToCadence = ({userInfo, personId, getCadenceList}) => {
     }
 
         return (
-            <div>
+            <div data-testid='addToCadenceModalContainer'>
                 <div style={{cursor: 'pointer', color: '#3C9CD2', fontSize: '.7em', marginLeft: '2em'}} onClick={() => showAddToCadenceModal()}>+ Add to Cadence</div>
                 {isModalOpen ? <AddToCadenceModal showAddToCadenceModal={showAddToCadenceModal} cadenceList={cadenceList} personId={personId} getCadenceList={getCadenceList} setIsTeamCadence={setIsTeamCadence} /> : null}
             </div>
