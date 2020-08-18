@@ -24,7 +24,7 @@ const AllCadenceList = ({cadenceList, searchText, selectedCadenceId, setSelected
                     <ListCadence key={cadence.id} className='hoverCadence' onClick={() => setSelectedCadenceId(cadence.id)}>
                         {cadence.id === selectedCadenceId ? <span style={{backgroundColor: '#86C6E5', paddingRight: '.5em'}}/> : <span style={{paddingRight: '.5em'}}/>}
                         <CadenceTextContainer>
-                            <div style={{paddingLeft: 'calc(3vw - .5em)'}}>{cadence.name}</div>
+                            <div data-testid='cadence-name' style={{paddingLeft: 'calc(3vw - .5em)'}}>{cadence.name}</div>
                             <div style={{paddingRight: '3vw', color: '#6baecf', cursor: 'pointer'}}>Show Steps</div>
                         </CadenceTextContainer>
                     </ListCadence>

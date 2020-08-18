@@ -1,19 +1,36 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import AddToCadence from '../AddToCadence';
+import * as File from '../AddToCadence';
+import * as CadenceIds from '../getCadenceIds'
+import AllCadenceList from '../AllCadenceList'
 
-test('<AddToCadence /> shows Modal with close button', () => {
-    const showAddToCadenceModal = jest.fn()
+console.error = jest.fn()
+
+
+describe('AddToCadence', () => {
+    beforeEach(() => jest.spyOn(CadenceIds, 'getCadenceIdsByGuid').mockImplementation(() => Promise.resolve([1234343, 10293202, 29302393])))
+    afterEach(() => jest.clearAllMocks())
+    test('<AddToCadence /> shows Modal with close button', () => {
+
+        const { debug, getByText } = render(<File.AddToCadence />)
+        expect(getByText('+ Add to Cadence')).toBeTruthy()
     
-    const { debug, getByTestId } = render(
-    <AddToCadence>
-        <div onClick={showAddToCadenceModal}></div>
-    </AddToCadence>
-    )
-
-    fireEvent.click(getByTestId('addToCadenceModalContainer'))
-
-
-    expect(getByTestId('addToCadenceModalContainer').textContent).toBe('+ Add to Cadence');
-  });
+        fireEvent.click(getByText('+ Add to Cadence'))
+        //expect(showAddToCadenceModal).toHaveBeenCalled()
+      });
+})
   
+
+
+  //test('<AllCadenceList /> renders cadence names', () => {
+
+    //  const cadenceList = {
+        //  name: 'ABH Cadence',
+      //}
+      //const { debug, getByTestId } = render(<AllCadenceList cadenceList={cadenceList} />)
+      
+
+      //debug()
+      //expect(console.error).not.toHaveBeenCalled()
+      //expect(getByTestId('cadence-name')).toHaveTextContent('ABH Cadence')
+  //})
