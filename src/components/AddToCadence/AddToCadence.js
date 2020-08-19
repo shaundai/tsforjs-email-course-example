@@ -24,8 +24,6 @@ export const AddToCadence = ({userInfo, personId, getCadenceList}) => {
     const [cadenceList, setCadenceList] = useState([])
     const [isTeamCadence, setIsTeamCadence] = useState(false)
 
-
-
     const showAddToCadenceModal = async () => {
         try {
             const cadenceIds = await getCadenceIdsByGuid(isTeamCadence, userInfo)

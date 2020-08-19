@@ -3,7 +3,7 @@ import SalesLoft from './util/salesloftApi'
 
 import CadenceList from './CadenceList'
 import NumberOfCadences from './NumberOfCadences'
-import AddToCadence from './AddToCadence/AddToCadence'
+import { AddToCadence } from './AddToCadence/AddToCadence'
 
 const CurrentCadences = ({personId, firstName, userInfo}) => {
 

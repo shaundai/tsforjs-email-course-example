@@ -32,7 +32,7 @@ const AccountPage = ({account, people, peopleInCadences}) =>  {
 
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', border: '1px solid rgb(229, 229, 229)', paddingBottom: '1.2em', backgroundColor: 'white'}}>
                 <DecorativeBlock />
-                <Tier><span style={{backgroundColor: '#3C9CD2', borderRadius: '5em', padding: '.1em .4em'}}>{utilFunctions.findAccountTier(account.account_tier.id)}</span></Tier>
+                <Tier data-testid="tier"><span style={{backgroundColor: '#3C9CD2', borderRadius: '5em', padding: '.1em .4em'}}>{utilFunctions.findAccountTier(account.account_tier.id)}</span></Tier>
                 <div style={{fontSize: '1.2em', marginBottom: '.3em'}}>{account.name}</div>
                 <div style={{fontSize: '.8em', marginBottom: '.3em'}}>{account.phone}</div>
                 <div style={{marginBottom: '.8em'}}><a href={account.website} style={{fontSize: '.8em', color: '#3C9CD2', textDecoration: 'none', fontWeight: 'bold'}}>{account.website}</a></div>
