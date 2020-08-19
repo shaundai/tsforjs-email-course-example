@@ -14,7 +14,7 @@ const Login = () => {
               <em>by </em> <img alt="salesloft logo" src={salesloftlogo} style={{height: '1.6em', color: 'white', margin: '0 .4em'}} /></div>
           </div>
           <div style={{margin: '2.5em auto'}}>
-            <Button href='https://accounts.salesloft.com/oauth/authorize?client_id=7278d0df3e6175f5900d67986ab4a639f38d80339d6692bc6d29ecb4a5e8d3ef&redirect_uri=http://localhost:3000/redirect&response_type=code'>
+            <Button href='https://accounts.salesloft.com/oauth/authorize?client_id=7278d0df3e6175f5900d67986ab4a639f38d80339d6692bc6d29ecb4a5e8d3ef&redirect_uri=https://shaundai-salesloft.surge.sh/redirect&response_type=code'>
             Log in
             </Button>
         </div>
