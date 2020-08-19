@@ -13,7 +13,7 @@ const AccountList = ({tier, accounts, showPeopleList}) => {
         return (
             <div>
                 <TierTitle>Tier {tier}  ({accounts.length})</TierTitle>
-                <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '50vh', overflow: 'scroll'}}>
+                <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '50vh', overflow: 'auto'}}>
                 {accounts.map(item => (
                 <ListAccount key={item.id}>
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
