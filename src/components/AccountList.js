@@ -19,12 +19,12 @@ const AccountList = ({tier, accounts, showPeopleList}) => {
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                       <div style={{display: 'flex', flexDirection: 'column'}}>
                         <div style={{fontSize: '.8em', cursor: 'pointer'}} onClick={() => showPeopleList(item.id)}><b>{item.name}</b></div>
-                        <div style={{fontSize: '.7em'}}>Last Contacted: {utilFunctions.parsedDate(item.last_contacted_at)} ago</div>
+                        <div data-testid='lastcontacted' style={{fontSize: '.7em'}}>Last Contacted: {utilFunctions.parsedDate(item.last_contacted_at)} ago</div>
                       </div>
                       <div style={{display: 'flex', alignItems: 'center'}}>
-                      <a href={item.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .3em', height: '1.2em'}} /></a>
-                      <a href={item.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .3em', height: '1.2em'}} /></a>
-                      <a href={item.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
+                      <a data-testid='salesforce' href={item.crm_url}><img alt="Salesforce" src={salesforce} style={{margin: '0 .3em', height: '1.2em'}} /></a>
+                      <a data-testid='linkedin' href={item.linkedin_url}><img alt="LinkedIn" src={linkedin} style={{margin: '0 .3em', height: '1.2em'}} /></a>
+                      <a data-testid='website' href={item.website}><img alt="Company Website"  src={website} style={{margin: '0 .3em', height: '1.2em'}}/></a>
                     </div>
                     </div>
 
