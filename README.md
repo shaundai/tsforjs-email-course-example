@@ -16,8 +16,8 @@ Check out the [back-end Node/Express code here](https://github.com/shaundai/shau
 ## Installation
 To run the front-end locally, clone this git repository to your local machine.  Then follow 6 easy steps:
 
-#### Step 1: Get a client secret and ID
-Visit https://accounts.salesloft.com/oauth/applications and generate a client secret and ID
+#### Step 1:
+Get your SalesLoft client secret and ID.  Visit https://accounts.salesloft.com/oauth/applications and generate a client secret and ID
 
 #### Step 2:
 Create a file in the components folder called "Secrets" and copy the following code into the file:
@@ -45,13 +45,13 @@ Run the code locally by running 'npm start' in the terminal.
 
 ## Project Screen Shots
 
-## Homepage
+#### Homepage
 ![Homepage screenshot](./public/images/homepage.png?raw=true "Homepage")
 
-## Dashboard *(Actual Company Information Blurred)*
+#### Dashboard *(Actual Company Information Blurred)*
 ![Dashboard screenshot](./public/images/dashboard.png?raw=true "Dashboard")
 
-## Account Page *(Actual Company and Contact Information Blurred)*
+#### Account Page *(Actual Company and Contact Information Blurred)*
 ![Account Page screenshot](./public/images/account-page.png?raw=true "Account Page")
 
 ## Reflection
