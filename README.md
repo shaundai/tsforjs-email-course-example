@@ -45,11 +45,15 @@ Run the code locally by running 'npm start' in the terminal.
 
 ## Project Screen Shots
 ![Homepage screenshot](./public/images/homepage.png?raw=true "Homepage")
-Homepage
+##Homepage
 
-Dashboard
+![Dashboard screenshot](./public/images/dashboard.png?raw=true "Dashboard")
 
-Account Page
+##Dashboard *(Actual Company Information Blurred)*
+
+![Account Page screenshot](./public/images/account-page.png?raw=true "Account Page")
+
+##Account Page *(Actual Company and Contact Information Blurred)*
 
 ## Reflection
 
@@ -68,6 +72,7 @@ I'd have testing in mind from the beginning.  In order to do this, I would break
 
 ## What to Expect in v2
 Additional features that will be available in the next version:
--Ability to sort contacts by seniority
--Checkboxes for selection of multiple contacts - users will be able to perform bulk-actions on contacts such as adding to cadences
--More account stats including number of contacts in cadences by seniority and account penetration
+
+- Ability to sort contacts by seniority
+- Checkboxes for selection of multiple contacts - users will be able to perform bulk-actions on contacts such as adding to cadences
+- More account stats including number of contacts in cadences by seniority and account penetration
