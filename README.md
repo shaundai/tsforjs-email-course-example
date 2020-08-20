@@ -10,6 +10,9 @@ Find the full live project on the [live app](https://shaundai-salesloft.surge.sh
 
 Check out the [back-end Node/Express code here](https://github.com/shaundai/shaundai-salesloft-node).
 
+## Installation
+To run the front-end locally, 
+
 ## Project Screen Shots
 ![Homepage screenshot](./public/images/homepage.png?raw=true "Homepage")
 
