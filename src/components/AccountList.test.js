@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import AccountList from '../AccountList'
-import utilFunctions from '../util/utilFunctions'
+import AccountList from './AccountList'
+import utilFunctions from './util/utilFunctions'
 
 const tier = 1
 

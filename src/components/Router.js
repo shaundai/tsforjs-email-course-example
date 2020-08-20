@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './Login';
 import NotFound from './NotFound';
 import Redirecting from './Redirecting';
-import App from './App';
+import { App } from './App';
 
 const Router = () => (
     <BrowserRouter>

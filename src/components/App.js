@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import { useAsync } from 'react-use';
 import styled from 'styled-components';
+import { getAllAccountInfo, getCurrentUserInfo } from './getFunctions'
 import './App.css';
-
-//apis
-import SalesLoft from './util/salesloftApi'
 
 //app components
 import AppHeader from './AppHeader'
 import Tiers from './Tiers'
 
-function App() {
+export const App = () => {
   const [userInfo, setUserInfo] = useState({id: '', firstName: '', guid: ''})
   const [allAccountInfo, setAllAccountInfo] = useState([])
 
  useAsync(async () => {
     try {
-      const { id, first_name: firstName, guid } = (await SalesLoft.getCurrentUserInfo()).data.data
-      setUserInfo({id: id, firstName: firstName, guid: guid})
-      const allInfo = (await SalesLoft.getAllAccountInfo(id)).data.data
+      const userInfo = await getCurrentUserInfo()
+      console.log(userInfo)
+      setUserInfo(userInfo)
+      const allInfo = await getAllAccountInfo(userInfo.id)
       setAllAccountInfo(allInfo)
     }
     catch(err){                 
@@ -39,8 +38,6 @@ function App() {
     </div>
   );
 }
-
-export default App;
 
 const Welcome = styled.div`
   padding-left: 1.5em;

@@ -7,7 +7,7 @@ import './Redirecting.css';
 
 const salesloftSecret = Secrets.salesloftSecret;
 const salesloftClientId = Secrets.salesloftClientId;
-const redirectUri = 'https://shaundai-salesloft.surge.sh/redirect'
+const redirectUri = 'http://localhost:3000/redirect'
 const axios = require('axios');
 
 const Redirecting = () => {
@@ -41,7 +41,7 @@ const Redirecting = () => {
             }
         })
     }
-    
+
     const getNewAccessToken = (refreshToken) => {
             return axios({
                 method: 'post',

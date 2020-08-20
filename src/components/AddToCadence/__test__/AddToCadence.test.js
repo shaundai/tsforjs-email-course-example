@@ -2,7 +2,6 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import * as File from '../AddToCadence';
 import * as CadenceIds from '../getCadenceIds'
-import AllCadenceList from '../AllCadenceList'
 
 describe('AddToCadence', () => {
     beforeEach(() => jest.spyOn(CadenceIds, 'getCadenceIdsByGuid').mockImplementation(() => Promise.resolve([1234343, 10293202, 29302393])))
