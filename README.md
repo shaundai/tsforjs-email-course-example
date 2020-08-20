@@ -44,16 +44,15 @@ Run the code locally by running 'npm start' in the terminal.
 
 
 ## Project Screen Shots
-![Homepage screenshot](./public/images/homepage.png?raw=true "Homepage")
-##Homepage
 
+## Homepage
+![Homepage screenshot](./public/images/homepage.png?raw=true "Homepage")
+
+## Dashboard *(Actual Company Information Blurred)*
 ![Dashboard screenshot](./public/images/dashboard.png?raw=true "Dashboard")
 
-##Dashboard *(Actual Company Information Blurred)*
-
+## Account Page *(Actual Company and Contact Information Blurred)*
 ![Account Page screenshot](./public/images/account-page.png?raw=true "Account Page")
-
-##Account Page *(Actual Company and Contact Information Blurred)*
 
 ## Reflection
 
