@@ -55,13 +55,13 @@ Account Page
 
 #### Biggest Learnings
 
--OAUTH 2.0!  From obtaining an authorization code to getting/using access and refresh tokens to sending back json on different routes, I learned so much about building an API that is connected to SalesLoft’s API.
+- OAUTH 2.0!  From obtaining an authorization code to getting/using access and refresh tokens to sending back json on different routes, I learned so much about building an API that is connected to SalesLoft’s API.
 
--Authorization flow and why it’s important for the user.  People expect their apps to behave in a certain way and making sure to build in small visuals that convey to the user that something is doing work behind the scenes is incredibly important for overall user experience
+- Authorization flow and why it’s important for the user.  People expect their apps to behave in a certain way and making sure to build in small visuals that convey to the user that something is doing work behind the scenes is incredibly important for overall user experience
 
--Deeper knowledge of APIs (both building APIs and setting up clean ways for my front-end to "shake hands" with my API), specifically working with the SalesLoft API.  I learned about Express routing, got a lot of practice with making get and post requests with axios, and figured out which responsibilities my front-end should have vs which my back-end should have.  Learning to debug my Node API allowed me to resolve bugs very quickly.
+- Deeper knowledge of APIs (both building APIs and setting up clean ways for my front-end to "shake hands" with my API), specifically working with the SalesLoft API.  I learned about Express routing, got a lot of practice with making get and post requests with axios, and figured out which responsibilities my front-end should have vs which my back-end should have.  Learning to debug my Node API allowed me to resolve bugs very quickly.
 
--Reinforced the importance of UX.  Adding in transitions, animations, and filling in <div>s with SOMEthing while waiting for a promise to be resolved allows the user to feel confident that your app is working.
+- Reinforced the importance of UX.  Adding in transitions, animations, and filling in < div > s with something while waiting for a promise to be resolved allows the user to feel confident that your app is working.
 
 #### If I Were to Do This Over...
 I'd have testing in mind from the beginning.  In order to do this, I would break my components into even smaller parts that can be tested easily.
