@@ -9,3 +9,9 @@ export const userInfo = {
     {id: 2, name: 'Google', account_tier: {id: '13'}},
     {id: 3, name: 'Dunkin Donuts', account_tier: {id: '13'}}
   ]
+
+  export const cadenceNames = [
+    {id: 1, name: 'ABH Cadence', team_cadence: true},
+    {id: 2, name: 'Nurture Cadence', team_cadence: false},
+    {id: 3, name: 'Fuego Prospecting', team_cadence: true}
+  ]

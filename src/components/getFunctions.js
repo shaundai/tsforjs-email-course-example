@@ -15,3 +15,16 @@ export const getCadenceMembershipByPersonIdAndCadenceId = async (personId, caden
    return membershipId
 }
 
+export const getAllCadenceMembershipIdsForAPerson = async (personId) => {
+    const cadenceMembershipList = (await SalesLoft.getIdsOfCadencesByPerson(personId)).data.data
+    const cadenceIdList = cadenceMembershipList.map((membership) => {
+    return membership.cadence.id
+    })
+    return cadenceIdList
+}
+
+export const getCadenceNames = async (cadenceIdList) => {
+    const cadenceNames = (await SalesLoft.getCadenceNameById(cadenceIdList)).data.data
+    return cadenceNames
+}
+

@@ -20,6 +20,6 @@ describe('App', () => {
 
     test('Correct username appears after api call', async () => {
       const { findByText } = render(<File.App userInfo={userInfo} list={allAccountInfo} />);
-      expect(await findByText(/oprah/i)).toBeInTheDocument();
+      expect(await findByText(userInfo.firstName)).toBeInTheDocument();
       });
 })

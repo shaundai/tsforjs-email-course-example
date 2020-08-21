@@ -3,7 +3,7 @@ import { useAsync } from 'react-use'
 import styled from 'styled-components'
 
 import utilFunctions from './util/utilFunctions'
-import CurrentCadences from './CurrentCadences'
+import { CurrentCadences } from './CurrentCadences'
 import SalesLoft from './util/salesloftApi'
 
 //images

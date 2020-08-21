@@ -4,8 +4,9 @@ import SalesLoft from './util/salesloftApi'
 import CadenceList from './CadenceList'
 import NumberOfCadences from './NumberOfCadences'
 import { AddToCadence } from './AddToCadence/AddToCadence'
+import { getAllCadenceMembershipIdsForAPerson, getCadenceNames } from './getFunctions'
 
-const CurrentCadences = ({personId, firstName, userInfo}) => {
+export const CurrentCadences = ({personId, firstName, userInfo}) => {
 
     const [cadenceInfo, setCadenceInfo] = useState([])
     const [showCadenceList, setShowCadenceList] = useState(false)
@@ -13,11 +14,8 @@ const CurrentCadences = ({personId, firstName, userInfo}) => {
 
     const getCadenceList = async (personid) => {
         try {
-            const cadenceMembershipList = (await SalesLoft.getIdsOfCadencesByPerson(personid)).data.data
-            const cadenceIdList = cadenceMembershipList.map((membership) => {
-                return membership.cadence.id
-            })
-            const cadenceNames = (await SalesLoft.getCadenceNameById(cadenceIdList)).data.data
+            const cadenceIdList = await getAllCadenceMembershipIdsForAPerson(personid)
+            const cadenceNames = await getCadenceNames(cadenceIdList)
             setCadenceInfo(cadenceNames)
             setShowCadenceList(showCadenceList ? false : true)
         }
@@ -29,7 +27,7 @@ const CurrentCadences = ({personId, firstName, userInfo}) => {
         return (
             <div style={{display: 'flex', flexDirection: 'column', width: '100%', justifyContent: 'space-between', alignItems: 'flex-end'}}>
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
-                    <div style={{fontSize: '.7em', color: '#3C9CD2', cursor: 'pointer'}} onClick={() => getCadenceList(personId)}>{showCadenceList ? `hide ${firstName}'s cadences` : <NumberOfCadences firstName={firstName} personId={personId} setIsCurrentlyOnCadence={setIsCurrentlyOnCadence} isCurrentlyOnCadence={isCurrentlyOnCadence}/> }</div>
+                    <div data-testid="showHideCadences" style={{fontSize: '.7em', color: '#3C9CD2', cursor: 'pointer'}} onClick={() => getCadenceList(personId)}>{showCadenceList ? `hide ${firstName}'s cadences` : <NumberOfCadences firstName={firstName} personId={personId} setIsCurrentlyOnCadence={setIsCurrentlyOnCadence} isCurrentlyOnCadence={isCurrentlyOnCadence}/> }</div>
                     {showCadenceList ?
                     <CadenceList cadenceInfo={cadenceInfo} personId={personId} getCadenceList={getCadenceList} firstName={firstName} /> : null}
                 </div>
@@ -37,5 +35,3 @@ const CurrentCadences = ({personId, firstName, userInfo}) => {
             </div>
         )
 }
-
-export default CurrentCadences;
