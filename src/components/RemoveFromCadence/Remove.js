@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import RemoveAlertModal from './RemoveAlertModal'
 import SalesLoft from '../util/salesloftApi'
+import { getCadenceMembershipByPersonIdAndCadenceId } from '../getFunctions'
 
 
-const Remove = ({personId, cadenceId, getCadenceList, cadenceName, firstName}) => {
+export const Remove = ({personId, cadenceId, getCadenceList, cadenceName, firstName}) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -13,7 +14,7 @@ const Remove = ({personId, cadenceId, getCadenceList, cadenceName, firstName}) =
 
     const removeFromCadence = async () => {
         try {
-            const membershipId = (await SalesLoft.getCadenceMembershipByPersonIdAndCadenceId(personId, cadenceId)).data.data[0].id
+            const membershipId = await getCadenceMembershipByPersonIdAndCadenceId(personId, cadenceId)
             await SalesLoft.removePersonFromCadence(membershipId)
             getCadenceList(personId)
             //alert("successfully removed from cadence")
@@ -30,5 +31,3 @@ const Remove = ({personId, cadenceId, getCadenceList, cadenceName, firstName}) =
         )
     
 }
-
-export default Remove

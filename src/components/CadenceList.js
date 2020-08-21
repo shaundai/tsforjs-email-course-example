@@ -1,5 +1,5 @@
 import React from 'react'
-import Remove from './RemoveFromCadence/Remove'
+import { Remove } from './RemoveFromCadence/Remove'
 
 const CadenceList = ({cadenceInfo, personId, getCadenceList, firstName}) => {
         return (
