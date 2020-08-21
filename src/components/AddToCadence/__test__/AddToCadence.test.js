@@ -8,7 +8,7 @@ describe('AddToCadence', () => {
     afterEach(() => jest.clearAllMocks())
     test('<AddToCadence /> shows Modal with close button', () => {
 
-        const { debug, getByText } = render(<File.AddToCadence />)
+        const { getByText } = render(<File.AddToCadence />)
         expect(getByText('+ Add to Cadence')).toBeTruthy()
     
         fireEvent.click(getByText('+ Add to Cadence'))

@@ -15,7 +15,6 @@ export const App = () => {
  useAsync(async () => {
     try {
       const userInfo = await getCurrentUserInfo()
-      console.log(userInfo)
       setUserInfo(userInfo)
       const allInfo = await getAllAccountInfo(userInfo.id)
       setAllAccountInfo(allInfo)
@@ -29,7 +28,7 @@ export const App = () => {
     <div style={{fontFamily: 'Montserrat', color: '#4F5359', backgroundColor: '#F7F9FA', height: '100vh'}}>
         <AppHeader />
         <div style={{paddingTop: '.3em'}}>
-        <Welcome data-testid="welcome">
+        <Welcome>
         Welcome, <b>{userInfo.firstName}</b>!
         </Welcome>
         <Welcome>How will you hit your quota this quarter?</Welcome>
