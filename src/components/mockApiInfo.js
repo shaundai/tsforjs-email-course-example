@@ -15,3 +15,15 @@ export const userInfo = {
     {id: 2, name: 'Nurture Cadence', team_cadence: false},
     {id: 3, name: 'Fuego Prospecting', team_cadence: true}
   ]
+
+  export const account = {
+    account_tier: { id: 13 },
+    last_contacted_person: { id: 5886 },
+    last_contacted_by: { id: 5886 },
+    size: 32,
+    last_contacted_type: 'email'
+}
+
+export const people = {
+    length: 12
+}
