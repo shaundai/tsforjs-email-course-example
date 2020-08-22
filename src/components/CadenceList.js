@@ -1,7 +1,7 @@
 import React from 'react'
 import { Remove } from './RemoveFromCadence/Remove'
 
-const CadenceList = ({cadenceInfo, personId, getCadenceList, firstName}) => {
+export const CadenceList = ({cadenceInfo, personId, getCadenceList, firstName}) => {
         return (
             <ul style={{listStyleType: 'none', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginTop: '1vh', marginBottom: '1vh', marginLeft: '0px', backgroundColor: '#f1fafe', padding: '4px 6px'}}>
                     {cadenceInfo[0] ? cadenceInfo.map(item => {
@@ -10,5 +10,3 @@ const CadenceList = ({cadenceInfo, personId, getCadenceList, firstName}) => {
             </ul>
         )
 }
-
-export default CadenceList 

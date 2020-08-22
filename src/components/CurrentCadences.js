@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import SalesLoft from './util/salesloftApi'
 
-import CadenceList from './CadenceList'
+import { CadenceList } from './CadenceList'
 import NumberOfCadences from './NumberOfCadences'
 import { AddToCadence } from './AddToCadence/AddToCadence'
 import { getAllCadenceMembershipIdsForAPerson, getCadenceNames } from './getFunctions'

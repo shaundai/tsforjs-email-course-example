@@ -13,15 +13,9 @@ describe('CurrentCadences', () => {
     afterEach(() => jest.clearAllMocks())
 
     test('show person cadences button is shown with correct contact name', async () => {
-        const { findByText } = render(<File.CurrentCadences firstName={contactInfo.firstName} />)
-        expect(await findByText(/show Martin's cadences/i)).toBeInTheDocument()
+        const { getByText } = render(<File.CurrentCadences firstName={contactInfo.firstName} />)
+        expect(getByText(/show Martin's cadences/i)).toBeTruthy()
+        
       });
 
-    test('Click on show cadences button renders list of cadences', async () => {
-        const { findByText, getByTestId, findAllByRole } = render(<File.CurrentCadences firstName={contactInfo.firstName} />)
-    
-        fireEvent.click(getByTestId('showHideCadences'))
-        expect(await findByText(/hide Martin's cadences/i)).toBeInTheDocument();
-        // expect(await findAllByRole('listitem')).toHaveLength(3);
-      });
 })
