@@ -1,22 +1,22 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import * as File from './AccountList';
-import utilFunctions from './util/utilFunctions'
+import { allAccountInfo } from './mockApiInfo'
 
 const tier = 1
 
-const accounts = [
-  {id: 1, name: 'SalesLoft', last_contacted_at: 'Sun Dec 17 1995 03:24:00 GMT'}
-]
-
-
 describe('AccountList', () => {
     afterEach(() => jest.clearAllMocks())
-    test('AccountList renders icons with links to SFDC and social', () => {
+    test('AccountList returns correct number of accounts', () => {
+        const { getAllByText } = render(<File.AccountList tier={tier} accounts={allAccountInfo} showPeopleList={false} />)
+        expect(getAllByText(/Last Contacted/i)).toHaveLength(3)
+      });
 
-        const { getByText } = render(<File.AccountList tier={tier} accounts={accounts} showPeopleList={false} />)
-        expect(getByText('Last Contacted: 25 years ago')).toBeTruthy()
-        //expect(getByText('Log in').getAttribute('href')).toBe(path)
-    
+      test('AccountList renders icons with icons for website, SFDC, and LinkedIn for each account', async () => {
+        const { getAllByRole, getAllByTestId } = render(<File.AccountList tier={tier} accounts={allAccountInfo} showPeopleList={false} />)
+        expect(getAllByRole('img')).toHaveLength(9)
+        expect(getAllByTestId('salesforce')).toHaveLength(3)
+        expect(getAllByTestId('linkedin')).toHaveLength(3)
+        expect(getAllByTestId('website')).toHaveLength(3) 
       });
 })

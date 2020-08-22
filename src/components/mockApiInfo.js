@@ -5,9 +5,9 @@ export const userInfo = {
   }
   
  export const allAccountInfo = [
-    {id: 1, name: 'Bluecore', account_tier: {id: '13'}},
-    {id: 2, name: 'Google', account_tier: {id: '13'}},
-    {id: 3, name: 'Dunkin Donuts', account_tier: {id: '13'}}
+    {id: 1, name: 'Bed Bath Beyond', account_tier: {id: '13'}, last_contacted_at: 'Sun Dec 17 1995 03:24:00 GMT', crm_url: 'jiojofe', linkedin_url: 'linkdjifoem', website: 'www.bedbathandbeyond.com'},
+    {id: 2, name: 'Google', account_tier: {id: '13'}, last_contacted_at: 'Sun Dec 17 2005 03:24:00 GMT', crm_url: 'jlkdfjld', linkedin_url: 'linkdgoogs', website: 'www.google.com'},
+    {id: 3, name: 'Dunkin Donuts', account_tier: {id: '13'}, last_contacted_at: 'Sun Dec 17 2015 03:24:00 GMT', crm_url: 'uioerl', linkedin_url: 'linkdunkem', website: 'www.dunkin.com'}
   ]
 
   export const cadenceNames = [

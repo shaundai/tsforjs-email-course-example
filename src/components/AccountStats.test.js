@@ -7,11 +7,10 @@ describe('AccountStats', () => {
       test('Account Stats block is shown', async () => {
         const { debug, findByText } = render(<File.AccountStats people={people} account={account} peopleInCadences={4} lastContactedName={'Quincy Jones'} lastContactedBy={'Shaundai Person'} />)
         expect(await findByText('Stats')).toBeInTheDocument();
-        debug()
       });
 
       test('Account Stats is showing correct calculations', async () => {
-        const { debug, getByTestId } = render(<File.AccountStats people={people} account={account} peopleInCadences={4} lastContactedName={'Quincy Jones'} lastContactedBy={'Shaundai Person'} />)
+        const { getByTestId } = render(<File.AccountStats people={people} account={account} peopleInCadences={4} lastContactedName={'Quincy Jones'} lastContactedBy={'Shaundai Person'} />)
         //information pulled from api
         expect(await getByTestId('company-size')).toHaveTextContent(account.size);
         expect(await getByTestId('contacts-in-salesloft')).toHaveTextContent(people.length);
