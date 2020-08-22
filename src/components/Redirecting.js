@@ -4,10 +4,11 @@ import { useLocation, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { Secrets } from './Secrets'
 import './Redirecting.css';
+import { redirectUriPath } from './Login'
 
 const salesloftSecret = Secrets.salesloftSecret;
 const salesloftClientId = Secrets.salesloftClientId;
-const redirectUri = 'https://shaundai-salesloft.surge.sh'
+const redirectUri = `${redirectUriPath}/redirect`
 const axios = require('axios');
 
 const Redirecting = () => {

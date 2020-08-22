@@ -33,8 +33,7 @@ Create a file in the components folder called "Secrets" and copy the following c
 Replace 'your-salesloft-secret' and 'your-salesloft-client-id' with the Secret and Client ID that you generated in Step 1.
 
 #### Step 4:
-Change the *redirectUriPath* variable in Login.js from 'https://shaundai-salesloft.surge.sh' to 'http://localhost:3000' (or whichever local path you are using).  *redirectUriPath* should be a string.
-Also change the the *redirectUri* variable in Redirecting.js to the same path (as a string).
+Change the *redirectUriPath* variable in Login.js from 'https://shaundai-salesloft.surge.sh' to 'http://localhost:3000' (or whichever local path you are using).  *redirectUriPath* should be a string with no slashes at the end.
 
 #### Step 5:
 Add the path that you use in Step 4 to your list of whitelisted Callback URLs in your [SalesLoft App Page](https://accounts.salesloft.com/oauth/applications).
