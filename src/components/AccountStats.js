@@ -7,16 +7,16 @@ export const AccountStats = ({account, people, peopleInCadences, lastContactedNa
         return (
             <div style={{marginTop: '3vh', display: 'flex', flexDirection: 'column', alignItems: 'center', border: '1px solid rgb(229, 229, 229)', paddingBottom: '1em', backgroundColor: 'white'}}>
                 <Header>Stats</Header>
-                <div style={{fontSize: '.8em', marginBottom: '.3em', paddingTop: '.7em'}}><b>Company Size:</b> {account.size ? account.size : 'unknown'}</div>
-                <div style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Contacts in SalesLoft:</b> {people.length}</div>
+                <div data-testid="company-size" style={{fontSize: '.8em', marginBottom: '.3em', paddingTop: '.7em'}}><b>Company Size:</b> {account.size ? account.size : 'unknown'}</div>
+                <div data-testid="contacts-in-salesloft" style={{fontSize: '.8em', marginBottom: '.3em'}}><b>Contacts in SalesLoft:</b> {people.length}</div>
                 <div style={{display: 'flex', fontSize: '.8em', marginBottom: '.3em'}}>
                     <StatBlock>
-                        <div style={{fontSize: '1.3em', fontWeight: 600}}>{peopleInCadences ? peopleInCadences : <span><span className="one">.</span><span className="two">.</span><span className="three">.</span></span>}</div>
+                        <div data-testid="people-in-cadences" style={{fontSize: '1.3em', fontWeight: 600}}>{peopleInCadences ? peopleInCadences : <span><span className="one">.</span><span className="two">.</span><span className="three">.</span></span>}</div>
                         <div style={{fontSize: '.8em'}}>Number</div>
                         <div style={{fontSize: '.8em'}}>in Cadences</div>
                     </StatBlock>
                     <StatBlock style={{borderLeft: '1px solid #4F5359'}}>
-                        <div style={{fontSize: '1.3em', fontWeight: 600}}>{peopleInCadences ? Math.round(peopleInCadences/people.length) : 0}</div>
+                        <div data-testid="percent-in-cadences" style={{fontSize: '1.3em', fontWeight: 600}}>{peopleInCadences ? `${Math.round(peopleInCadences/people.length * 100)}%` : 0}</div>
                         <div style={{fontSize: '.8em'}}>Percent</div>
                         <div style={{fontSize: '.8em'}}>in Cadences</div>
                     </StatBlock>
