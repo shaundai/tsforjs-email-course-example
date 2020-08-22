@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { fadeIn } from 'react-animations';
-import AccountList from './AccountList'
-import AccountPage from './AccountPage'
+import { AccountList } from './AccountList'
+import { AccountPage } from './AccountPage'
 import PeopleAtAccount from './PeopleAtAccount'
 
 //api

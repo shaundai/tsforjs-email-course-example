@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import AccountList from './AccountList'
+import * as File from './AccountList';
 import utilFunctions from './util/utilFunctions'
 
 const tier = 1
@@ -14,7 +14,7 @@ describe('AccountList', () => {
     afterEach(() => jest.clearAllMocks())
     test('AccountList renders icons with links to SFDC and social', () => {
 
-        const { getByText } = render(<AccountList tier={tier} accounts={accounts} showPeopleList={false} />)
+        const { getByText } = render(<File.AccountList tier={tier} accounts={accounts} showPeopleList={false} />)
         expect(getByText('Last Contacted: 25 years ago')).toBeTruthy()
         //expect(getByText('Log in').getAttribute('href')).toBe(path)
     

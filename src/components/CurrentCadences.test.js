@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import * as File from './CurrentCadences';
 import * as service from './getFunctions'
 import { cadenceNames } from './mockApiInfo'

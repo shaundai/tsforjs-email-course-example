@@ -8,7 +8,7 @@ import linkedin from '../images/linkedin.png'
 import salesforce from '../images/salesforce.png'
 import website from '../images/websiteicon.png'
 
-const AccountList = ({tier, accounts, showPeopleList}) => {
+export const AccountList = ({tier, accounts, showPeopleList}) => {
 
         return (
             <div>
@@ -34,8 +34,6 @@ const AccountList = ({tier, accounts, showPeopleList}) => {
             </div>
         )
     }
-
-export default AccountList
 
 
 const TierTitle = styled.div`

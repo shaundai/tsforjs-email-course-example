@@ -28,3 +28,12 @@ export const getCadenceNames = async (cadenceIdList) => {
     return cadenceNames
 }
 
+export const getLastContactedPerson = async (id) => {
+    const person = (await SalesLoft.getContactInfo(id)).data.data.display_name
+    return person
+}
+
+export const getUserWhoLastContactedAccount = async (id) => {
+    const userWhoLastContactedAccount = (await SalesLoft.getAnyUserInfo(id)).data.data.name
+    return userWhoLastContactedAccount
+}
