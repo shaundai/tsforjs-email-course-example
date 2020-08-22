@@ -69,6 +69,8 @@ Run the code locally by running 'npm start' in the terminal.
 #### If I Were to Do This Over...
 I'd have testing in mind from the beginning.  In order to do this, I would break my components into even smaller parts that can be tested easily.
 
+I would also plan for more cases where the API does not have certain information available or the user goes to a page that does not exist.
+
 ## What to Expect in v2
 Additional features that will be available in the next version:
 
