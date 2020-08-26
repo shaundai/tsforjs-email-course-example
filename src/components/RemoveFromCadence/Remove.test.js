@@ -7,12 +7,12 @@ describe('Remove', () => {
     beforeEach(() => jest.spyOn(service, 'getCadenceMembershipByPersonIdAndCadenceId').mockImplementation(() => Promise.resolve(1234343)))
     afterEach(() => jest.clearAllMocks())
 
-    test('remove button is shown', async () => {
+    it('shows the remove button', () => {
         const { getByText } = render(<File.Remove />)
         expect(getByText('remove')).toBeTruthy()
       });
 
-    test('<Remove /> shows warning Modal with remove and cancel button on click', async () => {
+    it('shows warning modal with remove and cancel button on click', async () => {
         const { getByText, findByText, findAllByRole } = render(<File.Remove />)
     
         fireEvent.click(getByText('remove'))

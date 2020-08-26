@@ -12,7 +12,7 @@ describe('CurrentCadences', () => {
     beforeEach(() => jest.spyOn(service, 'getCadenceNames').mockImplementation(() => Promise.resolve(cadenceNames)))
     afterEach(() => jest.clearAllMocks())
 
-    test('show person cadences button is shown with correct contact name', async () => {
+    it('shows show cadences button with correct contact name', async () => {
         const { getByText } = render(<File.CurrentCadences firstName={contactInfo.firstName} />)
         expect(getByText(/show Martin's cadences/i)).toBeTruthy()
         

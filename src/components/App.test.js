@@ -5,7 +5,7 @@ import * as service from './getFunctions'
 import { userInfo, allAccountInfo } from './mockApiInfo'
 
 describe('App', () => {
-  test('Welcome page is shown with three tier blocks', () => {
+  it('shows welcome page with three tier blocks', () => {
     beforeEach(() => jest.spyOn(service, 'getCurrentUserInfo').mockImplementation(() => Promise.resolve(userInfo)))
     beforeEach(() => jest.spyOn(service, 'getAllAccountInfo').mockImplementation(() => Promise.resolve(allAccountInfo)))
     afterEach(() => jest.clearAllMocks())
@@ -18,7 +18,7 @@ describe('App', () => {
       expect(getByText(/Tier 3/i)).toBeTruthy()
     });
 
-    test('Correct username appears after api call', async () => {
+    it('shows correct username after api call', async () => {
       const { findByText } = render(<File.App userInfo={userInfo} list={allAccountInfo} />);
       expect(await findByText(userInfo.firstName)).toBeInTheDocument();
       });

@@ -6,7 +6,7 @@ import * as CadenceIds from './getCadenceIds'
 describe('AddToCadence', () => {
     beforeEach(() => jest.spyOn(CadenceIds, 'getCadenceIdsByGuid').mockImplementation(() => Promise.resolve([1234343, 10293202, 29302393])))
     afterEach(() => jest.clearAllMocks())
-    test('<AddToCadence /> shows Modal with close button on click', async () => {
+    it('shows Modal with close button on click', async () => {
 
         const { getByText, findByText } = render(<File.AddToCadence />)
         expect(getByText('+ Add to Cadence')).toBeTruthy()

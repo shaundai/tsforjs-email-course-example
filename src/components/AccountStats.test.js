@@ -4,12 +4,12 @@ import * as File from './AccountStats';
 import { account, people } from './mockApiInfo'
 
 describe('AccountStats', () => {
-      test('Account Stats block is shown', async () => {
-        const { debug, findByText } = render(<File.AccountStats people={people} account={account} peopleInCadences={4} lastContactedName={'Quincy Jones'} lastContactedBy={'Shaundai Person'} />)
+      it('shows Account Stats block', async () => {
+        const { findByText } = render(<File.AccountStats people={people} account={account} peopleInCadences={4} lastContactedName={'Quincy Jones'} lastContactedBy={'Shaundai Person'} />)
         expect(await findByText('Stats')).toBeInTheDocument();
       });
 
-      test('Account Stats is showing correct calculations', async () => {
+      it('shows correct account stat calculations', async () => {
         const { getByTestId } = render(<File.AccountStats people={people} account={account} peopleInCadences={4} lastContactedName={'Quincy Jones'} lastContactedBy={'Shaundai Person'} />)
         //information pulled from api
         expect(await getByTestId('company-size')).toHaveTextContent(account.size);
