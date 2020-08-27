@@ -9,7 +9,7 @@ import styled from 'styled-components'
                     <ModalMiddleText><div>Are you sure you want to remove {firstName} from <b>{cadenceName}</b>?</div></ModalMiddleText>
                         <ModalButtonContainer>
                             <GreyButton onClick={() => showWarningModal()}>Cancel</GreyButton>
-                            <ModalButton style={{backgroundColor: '#86C6E5', color: 'white', marginRight: '1.4vw'}} onClick={() => removeFromCadence()}>Remove from Cadence</ModalButton>
+                            <BlueButton onClick={() => removeFromCadence()}>Remove from Cadence</BlueButton>
                         </ModalButtonContainer>
                 </Modal>
             </ModalBackground>
@@ -89,6 +89,12 @@ const Modal = styled.div`
 
   const GreyButton = styled(ModalButton)`
   background-color: #E5E5E5;
-  color: 4F5359;
-  marginRight: 1.0vw;
+  color: #4F5359;
+  margin-right: 1.0vw;
   `
+
+const BlueButton = styled(ModalButton)`
+background-color: #86C6E5;
+color: white;
+margin-right: 1.4vw;
+`
