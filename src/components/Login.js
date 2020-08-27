@@ -3,7 +3,7 @@ import './App.css';
 import styled from 'styled-components';
 import salesloftlogo from '../images/salesloftlogo.png';
 
-export const redirectUriPath = 'http://localhost:3000';
+export const redirectUriPath = 'https://shaundai-salesloft.surge.sh';
 
 export const path = `https://accounts.salesloft.com/oauth/authorize?client_id=7278d0df3e6175f5900d67986ab4a639f38d80339d6692bc6d29ecb4a5e8d3ef&redirect_uri=${redirectUriPath}/redirect&response_type=code`
 
