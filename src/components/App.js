@@ -16,7 +16,7 @@ export const App = () => {
     try {
       const userInfo = await getCurrentUserInfo()
       setUserInfo(userInfo)
-      const allInfo = (await getAllAccountInfo(userInfo.id)).data.data
+      const allInfo = await getAllAccountInfo(userInfo.id)
       setAllAccountInfo(allInfo)
     }
     catch(err){                 

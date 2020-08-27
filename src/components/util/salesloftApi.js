@@ -3,17 +3,9 @@ const axios = require('axios');
 const path = "https://shaundai-salesloft-node.herokuapp.com"
 
 const SalesLoft = {
-        
-        getCurrentUserInfo(){
-                return axios.get(`${path}/api/user`)
-        },
 
         getAnyUserInfo(userId){
                 return axios.get(`${path}/api/team/id/${userId}`)
-        },
-
-        getAllAccountInfo(userId){
-                return axios.get(`${path}/api/accounts?sort_by=last_contacted_at&per_page=100&owner_id%5B%5D=${userId}`)
         },
                 //AccountIds below needs to be an array with commas
         getPeopleAtAccounts(AccountIds){
@@ -60,13 +52,15 @@ const SalesLoft = {
 
 export default SalesLoft
 
+//reducers and testers
 export const getAllAccountInfo = async (userId) => {
-        return await axios.get(`${path}/api/accounts?sort_by=last_contacted_at&per_page=100&owner_id%5B%5D=${userId}`)
+        return (await axios.get(`${path}/api/accounts?sort_by=last_contacted_at&per_page=100&owner_id%5B%5D=${userId}`)).data.data
 }
 
 export const getCurrentUserInfo = async () => {
-        const { id, first_name: firstName, guid } = (await SalesLoft.getCurrentUserInfo()).data.data
-        return {id: id, firstName: firstName, guid: guid}
+        const getAllUserInfo = () => axios.get(`${path}/api/user`)
+        const { id, first_name: firstName, guid } = (await getAllUserInfo()).data.data
+        return { id: id, firstName: firstName, guid: guid }
     }
 
 export const getCadenceMembershipByPersonIdAndCadenceId = async (personId, cadenceId) => {
