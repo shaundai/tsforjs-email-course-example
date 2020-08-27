@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAsync } from 'react-use';
 import styled from 'styled-components';
-import { getAllAccountInfo, getCurrentUserInfo } from './getFunctions'
+import { getAllAccountInfo, getCurrentUserInfo } from './util/salesloftApi'
 import './App.css';
 
 //app components
@@ -16,7 +16,7 @@ export const App = () => {
     try {
       const userInfo = await getCurrentUserInfo()
       setUserInfo(userInfo)
-      const allInfo = await getAllAccountInfo(userInfo.id)
+      const allInfo = (await getAllAccountInfo(userInfo.id)).data.data
       setAllAccountInfo(allInfo)
     }
     catch(err){                 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import * as File from './Remove';
-import * as service from '../getFunctions'
+import * as service from '../util/salesloftApi'
 
 describe('Remove', () => {
     beforeEach(() => jest.spyOn(service, 'getCadenceMembershipByPersonIdAndCadenceId').mockImplementation(() => Promise.resolve(1234343)))

@@ -58,4 +58,39 @@ const SalesLoft = {
         }
 }
 
-export default SalesLoft;
+export default SalesLoft
+
+export const getAllAccountInfo = async (userId) => {
+        return await axios.get(`${path}/api/accounts?sort_by=last_contacted_at&per_page=100&owner_id%5B%5D=${userId}`)
+}
+
+export const getCurrentUserInfo = async () => {
+        const { id, first_name: firstName, guid } = (await SalesLoft.getCurrentUserInfo()).data.data
+        return {id: id, firstName: firstName, guid: guid}
+    }
+
+export const getCadenceMembershipByPersonIdAndCadenceId = async (personId, cadenceId) => {
+        const membershipId = (await SalesLoft.getCadenceMembershipByPersonIdAndCadenceId(personId, cadenceId)).data.data[0].id
+        return membershipId
+     }
+
+export const getAllCadenceMembershipIdsForAPerson = async (personId) => {
+        const cadenceMembershipList = (await SalesLoft.getIdsOfCadencesByPerson(personId)).data.data
+        const cadenceIdList = cadenceMembershipList.map((membership) => membership.cadence.id)
+        return cadenceIdList
+}
+
+export const getCadenceNames = async (cadenceIdList) => {
+        const cadenceNames = (await SalesLoft.getCadenceNameById(cadenceIdList)).data.data
+        return cadenceNames
+    }
+
+export const getLastContactedPerson = async (id) => {
+        const person = (await SalesLoft.getContactInfo(id)).data.data.display_name
+        return person
+}
+    
+export const getUserWhoLastContactedAccount = async (id) => {
+        const userWhoLastContactedAccount = (await SalesLoft.getAnyUserInfo(id)).data.data.name
+        return userWhoLastContactedAccount
+}

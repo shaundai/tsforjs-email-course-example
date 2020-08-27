@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { CadenceList } from './CadenceList'
 import NumberOfCadences from './NumberOfCadences'
 import { AddToCadence } from './AddToCadence/AddToCadence'
-import { getAllCadenceMembershipIdsForAPerson, getCadenceNames } from './getFunctions'
+import { getAllCadenceMembershipIdsForAPerson, getCadenceNames } from './util/salesloftApi'
 
 export const CurrentCadences = ({personId, firstName, userInfo}) => {
 
