@@ -8,7 +8,7 @@ const AllCadenceList = ({cadenceList, searchText, selectedCadenceId, setSelected
             ))
 
         return (
-            <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '100%', overflow: 'scroll', width: '100%'}}>
+            <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '100%', overflow: 'auto', width: '100%'}}>
                 {searchText ? searchList.map(cadence => (
                     <ListCadence key={cadence.id} className='hoverCadence' onClick={() => setSelectedCadenceId(cadence.id)}>
                         {cadence.id === selectedCadenceId ? <span style={{backgroundColor: '#86C6E5', paddingRight: '.5em'}}/> : <span style={{paddingRight: '.5em'}}/>}
