@@ -25,7 +25,7 @@ const PeopleAtAccount = ({people, userInfo, setPeopleInCadences}) => {
   }, [])
 
             return (
-                <div style={{width: '50vw', margin: 0, padding: 0, border: '1px solid rgb(229, 229, 229)', }}>
+                <div style={{width: '50vw', margin: 0, padding: 0, border: '1px solid rgb(229, 229, 229)'}}>
                     <TierTitle>Contacts ({people.length})</TierTitle>
                     <ul style={{listStyleType: 'none', margin: 0, padding: 0, height: '60vh', overflow: 'auto', backgroundColor: 'white'}}>
                     {people.map(person => (

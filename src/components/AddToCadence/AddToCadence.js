@@ -12,7 +12,6 @@ export const AddToCadence = ({userInfo, personId, getCadenceList}) => {
     const showAddToCadenceModal = async () => {
         try {
             const cadenceIds = await getCadenceIdsByGuid(isTeamCadence, userInfo)
-            console.log(cadenceIds)
             const cadenceInfo = (await SalesLoft.getCadenceNameById(cadenceIds)).data.data
             setCadenceList(cadenceInfo)
             setIsModalOpen(isModalOpen ? false : true)

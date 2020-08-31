@@ -42,11 +42,11 @@ const Tiers = ({list, userInfo}) => {
         <div> 
             {peopleAtAccountActive ?
             <PeopleAndAccount>
-              <div style={{color: '#3C9CD2', width: '97%', textAlign: 'right', fontSize: '.8em', cursor: 'pointer'}} onClick={() => setPeopleAtAccountActive(false)}>go back to Dashboard</div>
-              <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', height: '70vh'}}>
+              <BackToDashboard onClick={() => setPeopleAtAccountActive(false)}>go back to Dashboard</BackToDashboard>
+              <AccountViewContainer>
                 <AccountPage account={accountInfo} people={peopleList} peopleInCadences={peopleInCadences} />
                 <PeopleAtAccount people={peopleList} userInfo={userInfo} setPeopleInCadences={setPeopleInCadences} />
-              </div>
+              </AccountViewContainer>
             </PeopleAndAccount>
             : 
             <TierLists>
@@ -89,4 +89,19 @@ const TierLists = styled.div`
   align-items: center;
   height: 72vh;
   animation: .5s ${fadeInAnimation};
+`
+
+const BackToDashboard = styled.div`
+color: #3C9CD2;
+width: 97%;
+text-align: right;
+font-size: .8em;
+cursor: pointer;
+`
+
+const AccountViewContainer = styled.div`
+display: flex;
+justify-content: space-around;
+align-items: center;
+height: 70vh;
 `
