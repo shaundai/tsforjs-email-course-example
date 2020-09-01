@@ -4,7 +4,7 @@ import { useAsync } from 'react-use';
 import SalesLoft from './util/salesloftApi'
 
 
-const NumberOfCadences = ({firstName, personId, setIsCurrentlyOnCadence}) => {
+const NumberOfCadences = ({firstName, personId}) => {
 
     const [numberOfCadences, setNumberOfCadences] = useState('')
 
@@ -12,7 +12,6 @@ const NumberOfCadences = ({firstName, personId, setIsCurrentlyOnCadence}) => {
       try {
           const cadenceMembershipNumber = (await SalesLoft.getIdsOfCadencesByPerson(personId)).data.data.length
           setNumberOfCadences(cadenceMembershipNumber)
-          cadenceMembershipNumber > 0 ? setIsCurrentlyOnCadence(true) : setIsCurrentlyOnCadence(false)
       }
       catch(err){
         console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
