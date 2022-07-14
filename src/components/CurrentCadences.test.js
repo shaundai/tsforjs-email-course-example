@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import * as File from './CurrentCadences';
-import * as service from './util/salesloftApi'
+import * as service from './util/mockSalesloftApi'
 import { cadenceNames } from './mockApiInfo'
 
 const contactInfo = {

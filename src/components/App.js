@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAsync } from 'react-use';
 import styled from 'styled-components';
-import { getAllAccountInfo, getCurrentUserInfo } from './util/salesloftApi'
+import { getAllAccountInfo, getCurrentUserInfo } from './util/mockSalesloftApi'
 import './App.css';
 
 //app components

@@ -4,7 +4,7 @@ import { AccountStats } from './AccountStats'
 
 import styled from 'styled-components'
 import utilFunctions from './util/utilFunctions'
-import { getLastContactedPerson, getUserWhoLastContactedAccount } from './util/salesloftApi'
+import { getLastContactedPerson, getUserWhoLastContactedAccount } from './util/mockSalesloftApi'
 
 //images
 import linkedin from '../images/linkedin.png'

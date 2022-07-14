@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import RemoveAlertModal from './RemoveAlertModal'
-import SalesLoft, { getCadenceMembershipByPersonIdAndCadenceId } from '../util/salesloftApi'
+import SalesLoft, { getCadenceMembershipByPersonIdAndCadenceId } from '../util/mockSalesloftApi'
 
 export const Remove = ({personId, cadenceId, getCadenceList, cadenceName, firstName}) => {
 

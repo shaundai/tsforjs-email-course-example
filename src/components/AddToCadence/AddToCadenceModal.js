@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import search from '../../images/search.png'
 
 import AllCadenceList from './AllCadenceList'
-import SalesLoft from '../util/salesloftApi'
+import SalesLoft from '../util/mockSalesloftApi'
 
  const AddToCadenceModal = ({showAddToCadenceModal, cadenceList, personId, getCadenceList}) => {
 

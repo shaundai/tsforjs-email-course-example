@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AddToCadenceModal from './AddToCadenceModal'
-import SalesLoft from '../util/salesloftApi'
+import SalesLoft from '../util/mockSalesloftApi'
 import { getCadenceIdsByGuid } from './getCadenceIds'
 
 export const AddToCadence = ({userInfo, personId, getCadenceList}) => {

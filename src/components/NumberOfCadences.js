@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useAsync } from 'react-use';
 
-import SalesLoft from './util/salesloftApi'
+import SalesLoft from './util/mockSalesloftApi'
 
 
 const NumberOfCadences = ({firstName, personId}) => {

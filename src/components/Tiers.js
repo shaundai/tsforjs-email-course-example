@@ -6,7 +6,7 @@ import { AccountPage } from './AccountPage'
 import PeopleAtAccount from './PeopleAtAccount'
 
 //api
-import SalesLoft from './util/salesloftApi'
+import SalesLoft from './util/mockSalesloftApi'
 
 const Tiers = ({list, userInfo}) => {
 

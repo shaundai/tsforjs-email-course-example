@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import utilFunctions from './util/utilFunctions'
 import { CurrentCadences } from './CurrentCadences'
-import SalesLoft from './util/salesloftApi'
+import SalesLoft from './util/mockSalesloftApi'
 
 //images
 import linkedin from '../images/linkedin.png'

@@ -4,9 +4,6 @@ const path = "https://shaundai-salesloft-node.herokuapp.com"
 
 const SalesLoft = {
 
-        getAnyUserInfo(userId){
-                return axios.get(`${path}/api/team/id/${userId}`)
-        },
                 //AccountIds below needs to be an array with commas
         getPeopleAtAccounts(AccountIds){
                 return axios.get(`${path}/api/accounts/people?account_id%5B%5D=${AccountIds}`)
