@@ -10,7 +10,7 @@ const Login = () => {
 
 	const handleClickNavigation = e => {
 		e.preventDefault()
-		navigate('../redirecting', { replace: true })
+		navigate('./redirect', { replace: true })
 	}
 
 	return (

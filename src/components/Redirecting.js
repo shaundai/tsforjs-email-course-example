@@ -6,10 +6,12 @@ import './Redirecting.css'
 const Redirecting = () => {
 	const navigate = useNavigate()
 
-	navigate('/app')
+	setTimeout(() => {
+		navigate('/app', { replace: true })
+	}, '2000')
 
 	return (
-		<Main>
+		<Main>s
 			<div className='loader'>
 				<span></span>
 				<span></span>
