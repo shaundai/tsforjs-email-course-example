@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import { CadenceList } from './CadenceList'
 import NumberOfCadences from './NumberOfCadences'
-import { AddToCadence } from './AddToCadence/AddToCadence'
 import { getAllCadenceMembershipIdsForAPerson, getCadenceNames } from './util/mockSalesloftApi'
 
 export const CurrentCadences = ({personId, firstName, userInfo}) => {
@@ -34,7 +33,6 @@ export const CurrentCadences = ({personId, firstName, userInfo}) => {
                     {showCadenceList ?
                     <CadenceList cadenceInfo={cadenceInfo} personId={personId} getCadenceList={getCadenceList} firstName={firstName} /> : null}
                 </div>
-                <AddToCadence userInfo={userInfo} personId={personId} getCadenceList={getCadenceList} />
             </div>
         )
 }

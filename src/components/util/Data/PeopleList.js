@@ -1,4 +1,4 @@
-[
+export const PeopleList = [
  {
    "id": 1,
    "first_name": "Gav",
