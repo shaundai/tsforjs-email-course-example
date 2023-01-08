@@ -1,10 +1,10 @@
-import { UserInfo } from './Data.js/UserData'
+import { UserInfo } from './mockData/UserInfo'
 import {
-	Account,
 	AllAccountInfo,
 	CadenceNames,
 	People,
-} from './Data.js/AccountData'
+} from './mockData/AccountData'
+import { Account } from './mockData/AccountDetails'
 const axios = require('axios')
 
 const path = 'https://shaundai-salesloft-node.herokuapp.com'

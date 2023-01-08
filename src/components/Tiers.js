@@ -8,11 +8,10 @@ import { PeopleList } from './util/Data/PeopleList.js'
 import PeopleAtAccount from './PeopleAtAccount'
 
 //api
-import SalesLoft from './util/mockSalesloftApi'
+// import SalesLoft from './util/mockSalesloftApi'
 
 const Tiers = ({ userInfo }) => {
 	const [peopleAtAccountActive, setPeopleAtAccountActive] = useState(false)
-	const [accountInfo, setAccountInfo] = useState({})
 	const [peopleInCadences, setPeopleInCadences] = useState()
 
 	const TierOne = AccountDetails.filter(item => {
@@ -44,7 +43,7 @@ const Tiers = ({ userInfo }) => {
 					</BackToDashboard>
 					<AccountViewContainer>
 						<AccountPage
-							account={accountInfo}
+							account={AccountDetails}
 							people={PeopleList}
 							peopleInCadences={peopleInCadences}
 						/>
