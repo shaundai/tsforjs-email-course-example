@@ -1,6 +1,6 @@
 import { formatDistanceToNowStrict } from 'date-fns'
 
-const utilFunctions = {
+export const utilFunctions = {
 
     parsedDate(date) {
         return formatDistanceToNowStrict(new Date(date))
@@ -35,5 +35,3 @@ const utilFunctions = {
     }
 
 }
-
-export default utilFunctions;

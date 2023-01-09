@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { fadeIn } from 'react-animations'
-import { AccountList } from './AccountList'
-import { AccountPage } from './AccountPage'
-import { AccountDetails } from './util/Data/AccountDetails.js'
-import { PeopleList } from './util/Data/PeopleList.js'
-import PeopleAtAccount from './PeopleAtAccount'
+
+import { AccountList, AccountPage } from './accountView'
+import { AccountDetails, PeopleList } from './util'
+import { PeopleAtAccount } from './PeopleAtAccount'
 
 //api
-// import SalesLoft from './util/mockSalesloftApi'
+// import SalesLoft from './util'
 
-const Tiers = ({ userInfo }) => {
+export const TiersList = ({ userInfo }) => {
 	const [peopleAtAccountActive, setPeopleAtAccountActive] = useState(false)
 	const [peopleInCadences, setPeopleInCadences] = useState()
 
@@ -74,8 +73,6 @@ const Tiers = ({ userInfo }) => {
 		</div>
 	)
 }
-
-export default Tiers
 
 const TierBlock = styled.div`
 	border: 1px solid #e5e5e5;

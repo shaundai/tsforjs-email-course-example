@@ -1,11 +1,11 @@
 import React from 'react'
+import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 
-import './App.css'
-import styled from 'styled-components'
-import salesloftlogo from '../images/salesloftlogo.png'
+import '../App.css'
+import salesloftlogo from '../../images/salesloftlogo.png'
 
-const Login = () => {
+export const LoginPage = () => {
 	let navigate = useNavigate()
 
 	const handleClickNavigation = e => {
@@ -45,8 +45,6 @@ const Login = () => {
 		</Main>
 	)
 }
-
-export default Login
 
 const Main = styled.div`
 	background-color: #42aedc;

@@ -1,2 +1,4 @@
 export * from './AccountData'
-export * from './UserData'
+export * from './AccountDetails'
+export * from './PeopleList'
+export * from './UserInfo'

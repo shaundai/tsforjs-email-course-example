@@ -9,7 +9,7 @@ const axios = require('axios')
 
 const path = 'https://shaundai-salesloft-node.herokuapp.com'
 
-const SalesLoft = {
+export const SalesLoft = {
 	//AccountIds below needs to be an array with commas
 	getPeopleAtAccounts(AccountIds) {
 		return axios.get(`${path}/api/accounts/people?account_id%5B%5D=${AccountIds}`)
@@ -58,9 +58,6 @@ const SalesLoft = {
 		return axios.get(`${path}/api/cadence/steps?cadenceid=${CadenceId}`)
 	},
 }
-
-export default SalesLoft
-
 export const getAllAccountInfo = () => {
 	return	new Promise(resolve => setTimeout(resolve(AllAccountInfo), 2000))
 }

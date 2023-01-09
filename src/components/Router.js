@@ -1,17 +1,14 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Login from './login/login'
-import NotFound from './NotFound'
-import Redirecting from './Redirecting'
+import { LoginPage, RedirectingUserPage } from './login'
+import { NotFoundPage } from './NotFoundPage'
 import { App } from './App'
 
-const Router = () => (
+export const Router = () => (
 	<Routes>
-		<Route exact path='/' element={<Login />} />
-		<Route path='/redirect' element={<Redirecting />} />
+		<Route exact path='/' element={<LoginPage />} />
+		<Route path='/redirect' element={<RedirectingUserPage />} />
 		<Route path='/app' element={<App />} />
-		<Route element={<NotFound />} />
+		<Route element={<NotFoundPage />} />
 	</Routes>
 )
-
-export default Router

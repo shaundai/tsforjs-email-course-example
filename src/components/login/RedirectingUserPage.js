@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import './Redirecting.css'
+import './RedirectingUserPage.css'
 
-const Redirecting = () => {
+export const RedirectingUserPage = () => {
 	const navigate = useNavigate()
 
 	setTimeout(() => {
@@ -11,7 +11,7 @@ const Redirecting = () => {
 	}, '2000')
 
 	return (
-		<Main>s
+		<Main>
 			<div className='loader'>
 				<span></span>
 				<span></span>
@@ -20,8 +20,6 @@ const Redirecting = () => {
 		</Main>
 	)
 }
-
-export default Redirecting
 
 const Main = styled.div`
 	background-color: #e5e5e5;

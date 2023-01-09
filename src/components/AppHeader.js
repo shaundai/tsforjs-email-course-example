@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import salesloftlogo from '../images/salesloftlogo.png'
 
-const AppHeader = () => {
+export const AppHeader = () => {
 	return (
 		<Header>
 			<img
@@ -13,8 +13,6 @@ const AppHeader = () => {
 		</Header>
 	)
 }
-
-export default AppHeader
 
 const Header = styled.div`
 	color: white;

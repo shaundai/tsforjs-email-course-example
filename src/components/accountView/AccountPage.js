@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
-import { useAsync } from 'react-use'
-import { AccountStats } from './AccountStats'
-
 import styled from 'styled-components'
-import utilFunctions from './util/utilFunctions'
+import { useAsync } from 'react-use'
+
+import { AccountStats } from './AccountStats'
 import {
 	getLastContactedPerson,
 	getUserWhoLastContactedAccount,
-} from './util/mockSalesloftApi'
+	utilFunctions
+} from '../util'
 
 //images
-import linkedin from '../images/linkedin.png'
-import salesforce from '../images/salesforce.png'
-import website from '../images/websiteicon.png'
+import linkedin from '../../images/linkedin.png'
+import salesforce from '../../images/salesforce.png'
+import website from '../../images/websiteicon.png'
 
 export const AccountPage = ({ account, people, peopleInCadences }) => {
 	const [lastContactedName, setLastContactedName] = useState('')

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import * as File from './App';
-import * as service from './util/mockSalesloftApi'
+import * as service from './util'
 import { userInfo, allAccountInfo } from './mockApiInfo'
 
 describe('App', () => {

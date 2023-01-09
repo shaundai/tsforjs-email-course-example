@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { getAllAccountInfo, getCurrentUserInfo } from './util/mockSalesloftApi'
+import { getAllAccountInfo, getCurrentUserInfo } from './util'
 import './App.css'
 
 //app components
-import AppHeader from './AppHeader'
-import Tiers from './Tiers'
+import { AppHeader } from './AppHeader'
+import { TiersList } from './TiersList'
 
 export const App = () => {
 	const [userInfo, setUserInfo] = useState({ id: '', firstName: '', guid: '' })
@@ -15,7 +15,7 @@ export const App = () => {
 		getCurrentUserInfo()
 			.then(res => setUserInfo(res))
 			.catch(err => console.log(err))
-			getAllAccountInfo()
+		getAllAccountInfo()
 			.then(res => setAllAccountInfo(res))
 			.catch(err => console.log(err))
 	}, [])
@@ -36,7 +36,7 @@ export const App = () => {
 				</Welcome>
 				<Welcome>How will you hit your quota this quarter?</Welcome>
 			</div>
-			<Tiers list={allAccountInfo} userInfo={userInfo} />
+			<TiersList list={allAccountInfo} userInfo={userInfo} />
 		</div>
 	)
 }
